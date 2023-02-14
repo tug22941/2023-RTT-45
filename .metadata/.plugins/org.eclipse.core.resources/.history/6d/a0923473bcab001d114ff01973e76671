@@ -1,0 +1,11 @@
+package ass_303_6;
+
+public class WaterMonster extends Monster {
+	
+	public WaterMonster(String name) {this.name = name;}
+	
+	@Override
+	public String attack() {
+		return name + " used: Tidal Wave";
+	}
+}

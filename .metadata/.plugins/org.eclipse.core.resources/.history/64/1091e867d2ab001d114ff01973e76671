@@ -1,0 +1,8 @@
+package ass_303_6_EricEx;
+
+public class Shape {
+	
+	public String shapeName() {
+		return "Shape";
+	}
+}

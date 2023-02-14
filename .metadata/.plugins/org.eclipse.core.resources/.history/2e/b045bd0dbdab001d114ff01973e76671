@@ -1,0 +1,23 @@
+package ass_303_6;
+
+public class MonsterMain {
+
+	public static void main(String[] args) {
+		Monster fireMon = new FireMonster("Dragahn");
+		Monster leviathan = new WaterMonster("Levadon");
+		Monster worm = new StoneMonster ("Wyrm");
+		
+		System.out.println(fireMon.attack());
+		System.out.println(leviathan.attack());
+		System.out.println(worm.attack());
+		
+		System.out.println();
+		System.out.println(leviathan.getName() + " has perished! \n");
+		
+		leviathan = new WaterMonster("Kraken");
+		System.out.println(leviathan.attack());
+
+		
+	}
+
+}

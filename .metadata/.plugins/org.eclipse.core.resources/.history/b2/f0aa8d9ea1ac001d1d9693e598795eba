@@ -1,0 +1,17 @@
+package ass_303_7;
+
+import java.util.StringJoiner;
+
+public class StringJoinerEx {
+	
+	public static void main(String[] args) {
+		StringJoiner sj1 = new StringJoiner(",","[","]");
+		
+		sj1.add("element");
+		sj1.add("element2");
+		sj1.add("element3");
+		sj1.add("element4");
+		
+		System.out.println(sj1.toString());
+	}
+}

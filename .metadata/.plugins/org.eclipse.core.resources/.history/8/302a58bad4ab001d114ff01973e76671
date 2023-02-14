@@ -1,0 +1,9 @@
+package ass_303_6_EricEx;
+
+public abstract class Shape implements AreaCalculation{
+	
+	public String shapeName() {
+		return "Shape";
+	}
+
+}
