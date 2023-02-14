@@ -1,8 +1,0 @@
-package ass_303_6.Test;
-
-public class Shape {
-	
-	public String shapeName() {
-		return "Shape";
-	}
-}
