@@ -7,7 +7,6 @@ import java.util.List;
 public class ImplementsMain {
 
 	public static void main(String[] args) {
-		DecimalFormat df = new DecimalFormat("0.00");
 		
 		Square sq1 = new Square();
 		sq1.setShapeName("Square 1");
