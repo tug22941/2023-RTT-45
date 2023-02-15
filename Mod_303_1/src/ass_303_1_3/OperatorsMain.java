@@ -14,8 +14,13 @@ public class OperatorsMain {
 		//-----
 		ops.intToBinary2(225);
 		ops.intToBinary2(1555);
-		ops.intToBinary(32456);
-		
+		ops.intToBinary2(32456);
+		//-----
+		ops.intToAndBit();
+		ops.intToOrBit();
+		ops.intPostfix();
+		ops.incre3Ways();
+		ops.addAndIncre();
 	}
 	
 	//problem 1 - INTEGERS TO BINARY
@@ -69,5 +74,54 @@ public class OperatorsMain {
 		x = x >> 2;
 		//the output will be 100101
 		System.out.println(Integer.toBinaryString(x));
+	}
+	
+	//problem 7
+	public void intToAndBit() {
+		int x = 7;
+		int y = 17;
+		//the result of the bitwise will be 1
+		int z = (x & y);
+		System.out.println(z);
+		System.out.println(Integer.toBinaryString(z));
+	}
+	
+	//problem 8
+	public void intToOrBit() {
+		int x = 7;
+		int y = 17;
+		//the result of the bitwise will be 23
+		int z = (x | y);
+		System.out.println(z);
+		System.out.println(Integer.toBinaryString(z));
+	}
+	
+	//problem 9
+	public void intPostfix() {
+		int i = 0;
+		System.out.println(i);
+		i++;
+		System.out.println(i);
+	}
+	
+	//problem 10
+	public void incre3Ways() {
+		int i = 0;
+		System.out.println(i);
+		i = i + 1;
+		System.out.println(i);
+		i++;
+		System.out.println(i);
+		++i;
+	}
+	
+	//problem 11
+	public void addAndIncre() {
+		int x = 5;
+		int y = 8;
+		int sum = ++x + y;
+		System.out.println(sum);
+		sum = x++ + y;
+		System.out.println(sum);
 	}
 }
