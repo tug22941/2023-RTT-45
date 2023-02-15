@@ -15,7 +15,7 @@ public class StringJoinerEx {
 		sj1.add("element2");
 		sj1.add("element3");
 		sj1.add("element4");
-		
+		System.out.println(sj1.toString());
 		System.out.println();
 		
 		StringJoiner sj2 = new StringJoiner(",","[","]");		
@@ -23,7 +23,8 @@ public class StringJoinerEx {
 		sj2.add("list2");
 		sj2.add("list3");
 		sj2.add("list4");
-		
+		System.out.println(sj2.toString());
+		System.out.println();
 		//the merge function used the delimiter for sj1 for the sj1 elements
 		//the merge function also used the delimiter for sj2 for the sj2 elements
 		//then the merge function used the start and end characters of sj1
