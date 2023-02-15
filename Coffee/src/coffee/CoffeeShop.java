@@ -2,6 +2,7 @@ package coffee;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -42,6 +43,26 @@ public class CoffeeShop {
 
 		// directly adding item to the list through initialization
 		menuItems.add(new MenuItem("Oatmeal Cookie", 7.25, 3));
+		
+		//create a new menu item using the constructor
+		MenuItem item4 = new MenuItem("Medium Coffee", 5.00, 3);
+		menuItems.add(item4);
+		
+		//implement the comparator INTERFACE as an anonymous code block
+		menuItems.sort(
+				//this is the ANONYMOUS BLOCK that creates a new comparator
+				new Comparator<MenuItem>(){
+					
+				@Override //provide implementation for the Comparator interface
+				public int compare(MenuItem o1, MenuItem o2) {
+					//comparator logic
+					Double p1 = o1.getPrice();
+					Double p2 = o2.getPrice();
+					
+					return p1.compareTo(p2);
+				}
+			}
+		);
 	}
 
 	// method printing the name, price, and quantity in stock of menu items
