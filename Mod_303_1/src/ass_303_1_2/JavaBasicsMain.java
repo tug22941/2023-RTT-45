@@ -1,7 +1,5 @@
 package ass_303_1_2;
 
-import java.text.DecimalFormat;
-
 public class JavaBasicsMain {
 
 	public static void main(String[] args) {
