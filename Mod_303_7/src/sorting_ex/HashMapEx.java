@@ -1,4 +1,4 @@
-package SortingEx;
+package sorting_ex;
 
 import java.util.HashMap;
 import java.util.Map;
