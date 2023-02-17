@@ -1,6 +1,10 @@
 package java_files_io;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class FileExamples {
 	
@@ -31,6 +35,18 @@ public class FileExamples {
 		File code = new File("./src/java_files_io/FileExamples.java");
 		System.out.println("The file exsists = " + code.exists());
 		
-		Buff
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(code));
+			
+			String line = br.readLine();
+			while(line != null) {
+				System.out.println(line);
+				line = br.readLine();
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
 	}//end of main
 }
