@@ -31,5 +31,6 @@ public class FileExamples {
 		File code = new File("./src/java_files_io/FileExamples.java");
 		System.out.println("The file exsists = " + code.exists());
 		
+		Buff
 	}//end of main
 }
