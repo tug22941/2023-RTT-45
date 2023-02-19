@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Coffee/src"/>
+	<classpathentry kind="src" path="Mod_303_1/src"/>
+	<classpathentry kind="src" path="Mod_303_2/src"/>
+	<classpathentry kind="src" path="Mod_303_3/src"/>
+	<classpathentry kind="src" path="Mod_303_4/src"/>
+	<classpathentry kind="src" path="Mod_303_6/src"/>
+	<classpathentry kind="src" path="Mod_303_7/src"/>
+	<classpathentry kind="output" path="Coffee/bin"/>
+</classpath>
