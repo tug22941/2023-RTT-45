@@ -1,6 +1,7 @@
 package ass_303_3;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Array {
 
@@ -15,7 +16,9 @@ public class Array {
 		//array.printDoubleArr();
 		//array.printNoMidArr();
 		//array.printMidSwapArr();
-		array.printMaxMinSortArr();
+		//array.printMaxMinSortArr();
+		//array.printAllTypeArr();
+		array.favoriteThings();
 	}
 	
 	//problem 1
@@ -97,7 +100,7 @@ public class Array {
 		int[] arr = new int[size];
 		int mid = (arr.length/2);
 		for(int i=0; i<size; i++) {
-			arr[i] = i * 2;
+			arr[i] = i;
 			if(i == mid) {
 				int temp = arr[0];
 				arr[0] = i;
@@ -109,8 +112,42 @@ public class Array {
 	
 	//problem 9
 	public void printMaxMinSortArr() {
-		int[] arr = {4, 2, 9, 13, 1, 0};
+		int[] arr = new int[] {4, 2, 9, 13, 1, 0};
+		Arrays.sort(arr);
 
-		System.out.println(arr.toString());
+		System.out.println("Array in ascending order: " + Arrays.toString(arr));
+		System.out.println("The smallest number is: " + arr[0]);
+		System.out.println("The biggest number is: " + arr[arr.length-1]);
+	}
+	
+	//problem 10
+	public void printAllTypeArr() {
+		Object[] arr = new Object[5];
+		arr[0] = 33;
+		arr[1] = "Hello";
+		arr[2] = "World";
+		arr[3] = "!";
+		arr[4] = 19.99d;
+		System.out.println(Arrays.toString(arr));
+	}
+	
+	//problem 11
+	public void favoriteThings() {
+		Scanner scn = new Scanner(System.in);
+		System.out.println("How many favorite things do you have? :");
+		
+		int favNum = scn.nextInt();
+		String[] fav = new String[favNum];
+		
+		System.out.println("Enter your " + favNum + " things :");
+		scn.nextLine();
+		for(int i=0; i<fav.length; i++) {
+			String thing = scn.nextLine();
+			fav[i] = thing;
+		}
+		
+		System.out.println("Your favorite things are: ");
+		for(String s : fav) {System.out.println(s);}
+		scn.close();
 	}
 }
