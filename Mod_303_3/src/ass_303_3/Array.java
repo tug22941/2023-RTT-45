@@ -139,15 +139,17 @@ public class Array {
 		int favNum = scn.nextInt();
 		String[] fav = new String[favNum];
 		
-		System.out.println("Enter your " + favNum + " things :");
 		scn.nextLine();
 		for(int i=0; i<fav.length; i++) {
+			System.out.print("Enter your thing: ");
 			String thing = scn.nextLine();
 			fav[i] = thing;
 		}
 		
+		String out = "";
 		System.out.println("Your favorite things are: ");
-		for(String s : fav) {System.out.println(s);}
+		for(String s : fav) {out += s + " ";}
+		System.out.println(out.trim());
 		scn.close();
 	}
 }
