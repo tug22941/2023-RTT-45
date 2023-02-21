@@ -1,6 +1,7 @@
 package coffee;
 
 import java.text.DecimalFormat;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -63,7 +64,12 @@ public class CoffeeShop {
 				}
 			}
 		);
+		
+		//use the java stream to sort the menu items by price
+		//this single-line code accomplishes the same thing as the comparator interface above
+		menuItems.sort(Comparator.comparing(MenuItem::getPrice));
 	}
+	
 
 	// method printing the name, price, and quantity in stock of menu items
 	public void printMenuItems() {
