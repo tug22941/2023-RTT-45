@@ -22,10 +22,6 @@ public class Question2 {
 		q2.move(50, 3);
 		q2.move(30, 3);
 		q2.move(30, 4);
-
-		
-		
-		
 		
 	}//end of main
 	
