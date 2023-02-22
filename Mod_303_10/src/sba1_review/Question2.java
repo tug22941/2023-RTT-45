@@ -11,14 +11,15 @@ public class Question2 {
 		Question2 q2 = new Question2();
 		int[] avg = {1, 2, 3, 4, 5, 6, 7};
 		
-		//print msg setting average
+		//print the message setting average
 		q2.calculateAverage(avg);
-		
-		//print msg setting value
+
+		//print the message setting value
 		q2.setValue(4);
 		q2.setValue(5);
 		q2.setValue(4);
-		
+		System.out.println();
+
 		q2.move(50, 3);
 		q2.move(30, 3);
 		q2.move(30, 4);
@@ -33,13 +34,14 @@ public class Question2 {
 	
 	//constructor
 	Question2(){
-		//make a 1-based data structure - array of size 5
+		//make a 1-based data structure for array of size 5
 		//the key is to ignore the 0th element
 		int[] array = new int[ARRAY_SIZE + 1];
 		
 		//initialize this entire array to a value ...-1
 		Arrays.fill(array, -1);
 		arr = array;
+		System.out.println(Arrays.toString(arr));
 	}
 	
 	//this will be in an interface
@@ -53,31 +55,31 @@ public class Question2 {
 		for(int i : arr){
 			total += (double)i;
 		}
-		System.out.printf("Average:  %.2f \n", total);
+		double avg = total / arr.length;
+		System.out.printf("Average:  %.2f \n", avg);
 		System.out.println();
 	}
 	
 	//this will be in an interface
 	public  void setValue(int i) {
-		//if the value at index is equal to -1 print msg & set value to 1
-		//else print msg saying that value was already set
+		//if the value at index is equal to -1 print message saying that you set the value to 1
+		//& set value to 1
+		//else print message saying that value was already set
 		
 		if(arr[i] == -1) {
 			arr[i] = 1;
 			System.out.println("index ["+i+"]"+ "value set to 1");
-		}else {System.out.println("index ["+i+"]"+ "value is already set");}
-
-		System.out.println();
+		}else {System.out.println("index ["+i+"]"+ "value is already set to " + 1);}
 	}
 	
-	//this will be an extra function in 1/2 classes
+	//this will be an extra function in one of the 2 classes
 	public void move(int value, int id) {
-		//if value at array[id] !=1 - change value to 1
-		//else if value at array[id] == 1 - print message "value is already 1"
+		// if the value at array[id] == -1 then print a message saying "Value with id: {id} is moved to {value}" and set the value to 1
+		// otherwise print a message saying "Value is already 1"
 		if(arr[id] == -1) {
 			System.out.println("Value with id: " + id + " is moved to " + value);
 			arr[id] = value;
-		}else {System.out.println("Value with id: " + id + " is already " + value);}
+		}else {System.out.println("Value with id: " + id + " is already " + 1);}
 		
 	}
 }
