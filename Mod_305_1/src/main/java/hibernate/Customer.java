@@ -42,17 +42,23 @@ public class Customer {
 	@Column(name="country")
 	private String country;
 	
-	@Column(name="salesRepEmployeeNumber")
+	//insertable & updatable parameters essentially makes this a read only column
+	// we added this because of the many-to-one mapping that is on the same column
+	@Column(name="salesRepEmployeeNumber", insertable=false, updatable=false)
 	private Integer salesRepEmployeeNumber;
 	
 	@Column(name="credit_limit", columnDefinition="decimal", precision=18, scale=3)
 	private Double creditLimit;
 	
+	// this is the second column of 'salesRepEmployeeNumber'
+	@ManyToOne(fetch = FetchType.EAGER, optional = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = "salesRepEmployeeNumber", nullable = true)
+    private Employee employee;
+	
 	//default constructor
 	public Customer() {
 		
 	}
-	
 
 	// Properties 
 	public Integer getId() {
@@ -157,6 +163,14 @@ public class Customer {
 
 	public void setCreditLimit(Double creditLimit) {
 		this.creditLimit = creditLimit;
+	}
+	
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
 	}
 
 	// toString method
