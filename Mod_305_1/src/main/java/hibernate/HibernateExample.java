@@ -3,8 +3,10 @@ package hibernate;
 public class HibernateExample {
 
 	public static void main(String[] args) {
-		CustomerDAO customerDAO = new CustomerDAO();
 		
+		//CUSTOMER EXCERCISES
+		CustomerDAO customerDAO = new CustomerDAO();
+	
 		Customer customer = new Customer();
 		customer.setCustomerName("Hibernate Customer");
 		customer.setContactFirstname("First Name");
@@ -14,10 +16,10 @@ public class HibernateExample {
 		customer.setCity("Philadelphia");
 		customer.setState("PA");
 		customer.setCountry("USA");
-		//customerDAO.insert(customer);
+		customerDAO.insert(customer);
 		
-		Customer first = customerDAO.findById(496);
-		System.out.println(first.toString());
+		//Customer first = customerDAO.findById(496);
+		//System.out.println(first.toString());
 		
 		/*
 		first.setAddressLine2("This is an Update!");
@@ -25,15 +27,13 @@ public class HibernateExample {
 		first.setCreditLimit(1000000.35);
 		customerDAO.updateCustomer(first);
 		*/
-		
-		
+			
 		/*
 		List<Customer> firstName = he.findContactFirstName("Leslie");
 		for( Customer c : firstName) {
 			System.out.println(c);
 		}
 		*/
-		
 		//customerDAO.deleteByInteger(498); 
 		
 	}
