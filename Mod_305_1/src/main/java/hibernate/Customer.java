@@ -1,7 +1,28 @@
 package hibernate;
 
-import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name="Customers")
 public class Customer {
@@ -51,137 +72,14 @@ public class Customer {
 	private Double creditLimit;
 	
 	// this is the second column of 'salesRepEmployeeNumber'
+	
+	@ToString.Exclude
 	@ManyToOne(fetch = FetchType.EAGER, optional = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "salesRepEmployeeNumber", nullable = true)
     private Employee employee;
 	
-	//default constructor
-	public Customer() {
-		
-	}
-
-	// Properties 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getCustomerName() {
-		return customerName;
-	}
-
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
-	}
-
-	public String getContactLastname() {
-		return contactLastname;
-	}
-
-	public void setContactLastname(String contactLastname) {
-		this.contactLastname = contactLastname;
-	}
-
-	public String getContactFirstname() {
-		return contactFirstname;
-	}
-
-	public void setContactFirstname(String contactFirstname) {
-		this.contactFirstname = contactFirstname;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public String getAddressLine1() {
-		return addressLine1;
-	}
-
-	public void setAddressLine1(String addressLine1) {
-		this.addressLine1 = addressLine1;
-	}
-
-	public String getAddressLine2() {
-		return addressLine2;
-	}
-
-	public void setAddressLine2(String addressLine2) {
-		this.addressLine2 = addressLine2;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	public String getPostalCode() {
-		return postalCode;
-	}
-
-	public void setPostalCode(String postalCode) {
-		this.postalCode = postalCode;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
-	public Integer getSalesRepEmployeeNumber() {
-		return salesRepEmployeeNumber;
-	}
-
-	public void setSalesRepEmployeeNumber(Integer salesRepEmployeeNumber) {
-		this.salesRepEmployeeNumber = salesRepEmployeeNumber;
-	}
-
-	public Double getCreditLimit() {
-		return creditLimit;
-	}
-
-	public void setCreditLimit(Double creditLimit) {
-		this.creditLimit = creditLimit;
-	}
-	
-	public Employee getEmployee() {
-		return employee;
-	}
-
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
-	}
-
-	// toString method
-	@Override
-	public String toString() {
-		return "Customer [id=" + id + ", customerName=" + customerName + ", contactLastname=" + contactLastname
-				+ ", contactFirstname=" + contactFirstname + ", phone=" + phone + ", addressLine1=" + addressLine1
-				+ ", addressLine2=" + addressLine2 + ", city=" + city + ", state=" + state + ", postalCode="
-				+ postalCode + ", country=" + country + ", salesRepEmployeeNumber=" + salesRepEmployeeNumber
-				+ ", creditLimit=" + creditLimit + "]";
-	}
-	
+	@ToString.Exclude
+	@OneToMany(mappedBy = "customer", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<Payment> payments = new ArrayList<Payment>();
 	
 }
