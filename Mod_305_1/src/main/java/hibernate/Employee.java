@@ -1,9 +1,25 @@
 package hibernate;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
 @Entity
 @Table (name = "employees")
 public class Employee {
@@ -38,8 +54,9 @@ public class Employee {
 	@Column(name="vacation_hours")
 	private Integer vacationHours;
 	
+	@ToString.Exclude
 	@OneToMany(mappedBy = "employee", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<Customer> customers;
+	private List<Customer> customers = new ArrayList<Customer>();
 	
 	
 	//default constructor
@@ -128,16 +145,5 @@ public class Employee {
 	public void setCustomers(List<Customer> customers) {
 		this.customers = customers;
 	}
-
-	//toString method
-	@Override
-	public String toString() {
-		return "Employee [id=" + id + ", officeId=" + officeId + ", lastName=" + lastName + ", firstName=" + firstName
-				+ ", extenstion=" + extenstion + ", email=" + email + ", reportsTo=" + reportsTo + ", jobTitle="
-				+ jobTitle + ", vacationHours=" + vacationHours + "]";
-	}
-	
-	
-	
 	
 }

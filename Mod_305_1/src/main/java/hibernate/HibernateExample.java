@@ -5,6 +5,7 @@ public class HibernateExample {
 	public static void main(String[] args) {
 		
 		//CUSTOMER EXCERCISES
+		
 		CustomerDAO customerDAO = new CustomerDAO();
 	
 		Customer customer = new Customer();
@@ -16,17 +17,16 @@ public class HibernateExample {
 		customer.setCity("Philadelphia");
 		customer.setState("PA");
 		customer.setCountry("USA");
-		customerDAO.insert(customer);
-		
-		//Customer first = customerDAO.findById(496);
+		//customerDAO.insert(customer);
+
+		Customer first = customerDAO.findById(496);
 		//System.out.println(first.toString());
 		
-		/*
+
 		first.setAddressLine2("This is an Update!");
 		first.setPostalCode("80203");
 		first.setCreditLimit(1000000.35);
-		customerDAO.updateCustomer(first);
-		*/
+		//customerDAO.updateCustomer(first);
 			
 		/*
 		List<Customer> firstName = he.findContactFirstName("Leslie");
@@ -34,6 +34,7 @@ public class HibernateExample {
 			System.out.println(c);
 		}
 		*/
+		
 		//customerDAO.deleteByInteger(498); 
 		
 	}
