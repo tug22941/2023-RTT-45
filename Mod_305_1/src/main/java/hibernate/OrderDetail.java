@@ -46,7 +46,6 @@ public class OrderDetail {
 	
 	@Column(name="order_line_number", columnDefinition="SMALLINT")
 	private Integer orderLineNumber;
-
 	
 	@ToString.Exclude
 	@ManyToOne(fetch = FetchType.EAGER, optional = false, cascade = CascadeType.ALL)

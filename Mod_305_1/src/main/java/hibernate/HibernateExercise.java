@@ -7,10 +7,10 @@ public class HibernateExercise {
 
 	public static void main(String[] args) {
 		
-		//OrderDAO orderDAO = new OrderDAO();
-		//Order order = new Order();
+		OrderDAO orderDAO = new OrderDAO();
+		Order order = new Order();
 		
-		/*
+		
 		// insert new order
 		order.setCustomerId(515);
 		order.setOrderDate(new Date());
@@ -30,7 +30,7 @@ public class HibernateExercise {
 		order.setComments("Shipping in progress");		
 		
 		orderDAO.insert(order);
-		*/
+		
 		
 		/*
 		// update existing order
