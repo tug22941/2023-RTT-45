@@ -14,6 +14,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;;
@@ -22,6 +23,7 @@ import lombok.ToString;;
 @Setter
 @ToString
 @Entity
+@EqualsAndHashCode
 @Table(name="Payments")
 public class Payment {
 
@@ -45,8 +47,10 @@ public class Payment {
 	@Column(name="amount", columnDefinition="decimal", precision=18, scale=3)
 	private Double amount;
 	
-	 @ManyToOne(fetch = FetchType.LAZY, optional = false)
-	 @JoinColumn(name = "customer_id", nullable = false)
-	 private Customer customer;
+	@ToString.Exclude
+	@EqualsAndHashCode.Exclude
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "customer_id", nullable = false)
+	private Customer customer;
 	
 }
