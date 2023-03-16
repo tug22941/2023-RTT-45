@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="global.css"/>
+</head>
+<body>
+
+  <style>
+    a:visited{
+      color:purple;
+    }
+    a:hover{
+      color:orange;
+    }
+    h2:hover{
+      background-color: bisque;
+    }
+    #firsth1{
+      text-decoration: underline;
+    }
+    h3{
+      display:none;
+    }
+
+    .absolute-example{
+      width:200px;
+      height:400px;
+      right:50px;
+      background-color: chartreuse;
+      position: absolute;
+    }
+  </style>
+
+  <h1 class="page-header" id="firsth1">Title Page 1</h1>
+  <h2 class="page-header" style="font-size: 30px ;color:brown;">Title Page 2</h1>
+  <h3>Title Page 3</h3>
+  <br>
+  <p><a href="https://getbootstrap.com/" target="_blank">This Link Has Been Visited</a></p>
+  <p><a href="https://google.com/">This Link Has Not Been Visited</a></p>
+  <br>
+
+  <div class="absolute-example"></div>
+
+  <div class="container pt-3">
+    <table class="table table-dark table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td colspan="2">Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="button" class="btn btn-sm btn-primary">Submit</button>
+    <button type="button" class="btn btn-sm btn-danger">Cancel</button>
+  </div>
+
+</body>
+</html>
