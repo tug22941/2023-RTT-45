@@ -14,7 +14,10 @@ import jpa.entitymodels.Course;
 import jpa.entitymodels.Student;
 import jpa.entitymodels.StudentCourse;
 
+//student data access object class
+
 public class StudentDAO {
+	//get a list of all the students in the database
 	public List<Student> getAllStudents() {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
@@ -26,7 +29,7 @@ public class StudentDAO {
 		session.close();
 		return result;
 	}
-	
+	//get a single database result of a student matching the input email
 	public Student getStudentByEmail(String email) {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
@@ -39,7 +42,7 @@ public class StudentDAO {
 		session.close();
 		return result;
 	}
-	
+	//determine whether both the input email and password matches that of a student in the database
 	public Boolean validateStudent(String email, String password) {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
@@ -59,8 +62,7 @@ public class StudentDAO {
 			return false;
 		}
 	}
-	
-	//Uses StudentCourse Class!!!
+	//insert a new student course into the database, registering a student [USES STUDENTCOURSE CLASS]
 	public void registerStudentToCourse(StudentCourse studentCourse) {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
@@ -69,12 +71,12 @@ public class StudentDAO {
 		session.getTransaction().commit();
 		session.close();
 	}
-	
+	//get a list of all courses that a student, with the matching input id, is enrolled in
 	public List<Course> getStudentCourses(Integer studentId) {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
 		
-		// 1st query for all student course of student
+		// 1st query of student-course for all course info that a student is in enrolled in
 		String hql = "FROM StudentCourse sc where sc.sId = :sIdParam";
 		TypedQuery<StudentCourse> query1 = session.createQuery(hql, StudentCourse.class);
 		query1.setParameter("sIdParam", studentId);
@@ -87,6 +89,7 @@ public class StudentDAO {
 				//fill course list using courseId of each student course result
 				int courseId = sc.getCId();
 				
+				//2nd query of course for the corresponding course info
 				hql = "FROM Course c where c.cId = :cIdParam";
 				TypedQuery<Course> query2 = session.createQuery(hql, Course.class);
 				query2.setParameter("cIdParam", courseId);
@@ -99,7 +102,6 @@ public class StudentDAO {
 		}else{
 			//if student course query returns no results - exit
 			session.close();
-			System.out.println("No Courses found for student");
 			return null;
 		}
 

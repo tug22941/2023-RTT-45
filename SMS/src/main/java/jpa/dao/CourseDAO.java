@@ -10,7 +10,10 @@ import org.hibernate.cfg.Configuration;
 
 import jpa.entitymodels.Course;
 
+//course data access object class
+
 public class CourseDAO {
+	//get a list of all the courses in the database
 	public List<Course> getAllCourses() {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
