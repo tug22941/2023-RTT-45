@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+.page-header{
+    margin-left: 10px;
+    color:blueviolet;
+    font-weight: bold
+  }
+  h3{
+    color: (0,0,255,1);
+    background-color:#60c439;
+  }
+  body{
+    background-color: cornflowerblue;
+  }
+  .gradient{
+    height:100px;
+    background: rgb(215,31,3);
+    background: linear-gradient(90deg, rgba(215,31,3,1) 0%, rgba(221,121,45,1) 37%, rgba(185,207,54,1) 56%, rgba(46,211,205,1) 89%, rgba(0,212,255,1) 100%);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2)
+  }
+  .shadowBox{
+    margin-top:10px;
+    background-color: whitesmoke;
+    width:100px;
+    height: 100px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  }
+  .fillBox{
+    margin-top: 10px;
+    width:80%;
+    height: 300px;
+    background-color: pink;
+    background-image: url("https://friendlystock.com/wp-content/uploads/2019/12/4-special-pizza-cartoon-clipart.jpg");
+    background-repeat: repeat;
+    background-size: contain;
+  }
+
+  .colorChange{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+  }
+
+  @keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+  }
+
+  .block1{
+    width:400px;
+    height:400px;
+    color:#60c439;
+  }
+
+  /*--------------------*/
+  .signup-section{
+    height:50vh;
+  }
+
+  .signup-body{
+    background-color: #754449;
+  }
+
+  .signup-container{
+    margin-top:1%;
+    width:50vh;
+  }
+
+  form{
+    width:500px;
+    text-align:center;
+    margin-left:auto;
+    border:2px solid black;
+    border-radius: 5px;;
+    padding:10px;
+    box-shadow: 8px 10px #703809;
+    font-size: 22px;
+  }
+
+  *{
+    font-family: 'Luckiest Guy', cursive;
+  }
