@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties</title>
+    <style>
+        body{background-color: #ed862d;;}
+        h1,h5{text-align: center;}
+    </style>
+</head>
+<body>
+
+    <h1 style="width:100%">JS PROTOTYPE EX</h1>
+    <h5>check console</h5>
+
+    <script>
+        //object
+        var person = {  
+            firstName: "Jonah", 
+            lastName: "Saywonson", 
+            age:26, eyecolor:"brown",
+            location:["PA, NJ, NY, CO"]
+            };
+        console.log(person.firstName);
+
+        person.firstName = "Bob";
+        console.log(person.firstName)
+
+        person.height = "5.6ft";
+        console.log(person.height)
+
+        console.log(person["lastName"]);
+        
+        console.log(person.location[0])
+
+        //array
+        console.log("Location array size = " + person.location.length);
+    </script>
+</body>
+</html>

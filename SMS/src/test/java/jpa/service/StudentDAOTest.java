@@ -23,7 +23,7 @@ public class StudentDAOTest {
 		//when - an action happens
 		Student actual = studentDAO.getStudentByEmail("sbowden1@yellowbook.com");
 		
-		//given - test
+		//then - test
 		Assertions.assertEquals(expected.getSId(), actual.getSId());
 		Assertions.assertEquals(expected.getSEmail(), actual.getSEmail());
 		Assertions.assertEquals(expected.getSName(), actual.getSName());
