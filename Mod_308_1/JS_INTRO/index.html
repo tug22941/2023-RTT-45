@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Intro</title>
+    <style>
+        body{
+            background-color: indianred;
+            height: 100vh;
+        }
+        h1{text-align: center;}
+    </style>
+</head>
+<body>
+    
+    <h1>JS Exercises</h1>
+
+    <script>
+        console.log("This is a test script");
+        console.log('"3" == 3 ' + ("3" == 3));
+        console.log('3 == 3 ' + (3 == 3));
+        console.log('"3" == "3" ' + ("3" == "3"));
+        console.log('"3" === 3 ' + ("3" === 3));
+
+        let n = 7;
+        let r = prime(n);
+        console.log(`${n} is a prime #: ${r}` );
+
+        splitArithmetic("23 + 3 - 3^");
+
+        function prime(number){
+            let n = false;
+            if(number % 2 == 1)
+            {n= true; return n;}
+            else{n = false; return n}
+        }
+
+        function splitArithmetic(exp){
+            let ops = "";
+            let nums = "";
+            let type = "nums";
+            let lType = type;
+
+            let myArray = exp.split("");
+            myArray.forEach(e => {
+                let asc = e.codePointAt(0);
+                if(asc == 32){type == lType}
+                else if(asc >47 && asc<58){type = "nums";}
+                else{type = "ops";}
+
+                if(type == "nums"){
+                    if(asc == 32){nums += "_";}
+                    else{nums += e;}   
+                }else{
+                    if(asc == 32){ops += "_";}
+                    else{ops += e; }
+                }
+                if(asc == 32)
+                lType = type;
+                console.log(`n:${e} | asc:${asc}`);
+            });
+            console.log(`Ops:${ops}\nNums:${nums}`);
+
+        }
+    </script>
+</body>
+</html>

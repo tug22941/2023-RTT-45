@@ -18,7 +18,7 @@ public class CourseService {
 		return courseDAO.getAllCourses();
 	}
 	
-	//get a single course matching the input id
+	//get a single course from database matching the input id
 	public Course getCourseById(Integer id) {
 		
 		List<Course> allCourses = getAllCourses();

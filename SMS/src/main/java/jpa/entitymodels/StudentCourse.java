@@ -17,6 +17,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+//student course entity class
+
 @Getter
 @Setter
 @ToString
