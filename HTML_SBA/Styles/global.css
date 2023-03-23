@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #F1EBE7;
+}
+
+.navbar{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 0px 10px #DF1F26;
+}
+.form-control{
+    border-color:#000;
+}
+h2{
+    font-family: 'Playfair Display', serif;
+}
