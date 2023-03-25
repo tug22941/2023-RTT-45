@@ -9,5 +9,10 @@ let address1 = document.getElementById("txtAddressLine1");
 let address2 = document.getElementById("txtAddressLine2");
 let country = document.getElementById("ddlCountry");
 let state = document.getElementById("txtState");
+let city = document.getElementById("txtCity");
+let zipcode = docuemnt.getElementById("txtZipCode");
 
-console.log(firstName.value);
+function IsBlank(element){
+    if(element.value == ""){return true;}
+    else{return false;}
+}
