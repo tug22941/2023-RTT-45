@@ -20,35 +20,38 @@
 </head>
 </head>
 <body>
-    <section>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
-            <a class="navbar-brand" href="index.html">Jonah S</a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="aboutme.html">About Me</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="signup.html">Sign Up</a>
-                </li>
-                </ul>
-            </div>
-        </nav>
-    </section>
+  <section>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+      <a class="navbar-brand" href="index.html">Betty's Botique</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">Sign Up /</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signin.html">Sign In</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </section>
 
     <section class="py-3">
         <div class="container text-center">
@@ -61,12 +64,12 @@
             <form id="formId">
                 <div class="row justify-content-center">
                   <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
-                    <label for="txtFirstName" class="form-label">First Name <small>Required</small></label>
-                    <input type="text" class="form-control" id="txtFirstName" name="First Name" value="hello">
+                    <label for="txtFirstName" class="form-label reqInput">First Name <small>Required</small></label>
+                    <input type="text" class="form-control" id="txtFirstName">
                     <div id="txtFirstNameHelp" class="form-text"></div>
                   </div>
                   <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
-                    <label for="txtLastName" class="form-label">Last Name <small>Required</small></label>
+                    <label for="txtLastName" class="form-label reqInput">Last Name <small>Required</small></label>
                     <input type="text" class="form-control" id="txtLastName">
                     <div id="txtLastNameHelp" class="form-text"></div>
                   </div>
@@ -74,7 +77,7 @@
 
                 <div class="row justify-content-center align-items-center">
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
-                      <label for="txtemail" class="form-label">Email Address <small>Required</small></label>
+                      <label for="txtemail" class="form-label reqInput">Email Address <small>Required</small></label>
                       <input type="email" class="form-control" id="txtEmail" aria-describedby="emailHelp">
                       <div id="txtEmailHelp" class="form-text"></div>
                   </div>
@@ -87,12 +90,12 @@
               
                 <div class="row justify-content-center">
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
-                      <label for="txtPassword" class="form-label">Password <small>Required</small></label>
+                      <label for="txtPassword" class="form-label reqInput">Password <small>Required</small></label>
                       <input type="password" class="form-control" id="txtPassword">
                       <div id="txtPasswordHelp" class="form-text"></div>
                     </div>
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
-                      <label for="txtConfirmPassword" class="form-label">Confirm Password<small>Required</small></label>
+                      <label for="txtConfirmPassword" class="form-label reqInput">Confirm Password<small>Required</small></label>
                       <input type="password" class="form-control" id="txtConfirmPassword">
                       <div id="txtConfirmPasswordHelp" class="form-text"></div>
   
@@ -101,7 +104,7 @@
 
                 <div class="row justify-content-center">
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
-                      <label for="txtPhoneNumber" class="form-label">Phone Number<small>Required</small></label>
+                      <label for="txtPhoneNumber" class="form-label reqInput">Phone Number<small>Required</small></label>
                       <input type="text" class="form-control" id="txtPhoneNumber">
                     </div>
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
@@ -112,7 +115,7 @@
 
                 <div class="row justify-content-center">
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
-                        <label for="txtAddressLine1" class="form-label">Address Line 1<small>Required</small></label>
+                        <label for="txtAddressLine1" class="form-label reqInput">Address Line 1<small>Required</small></label>
                         <input type="text" class="form-control" id="txtAddressLine1">
                       </div>
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
@@ -125,7 +128,7 @@
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
                         <label for="ddlCountry" class="form-label">Country <small>Required</small></label>
                         <select id="ddlCountry" class="form-select form-control">
-                            <option selected>Country</option>
+                            <option selected></option>
                             <option value="USA">USA</option>
                             <option value="GHAN">Ghana</option>
                             <option value="BZ">Brazil</option>
@@ -155,7 +158,7 @@
               
                 <div class="row justify-content-center">
                   <div class="col col-4 text-center">
-                    <button type="button" class="btn btn-success w-75" onclick="formSubmit()" >Create Account</button>
+                    <button type="button" class="btn btn-success w-75" id="btnSubmit">Create Account</button>
                   </div>
                 </div>
                 
@@ -163,6 +166,38 @@
         </div>
     </section>
 
+    <section>
+      <div class="row justify-content-start mt-2 p-3 align-items-center text-center footer" style="background-color: #F1BB7F; border-top:2px solid #7a5b36">
+          <div class="col-md-2 col-sm-12">
+              <h2>Betty's Botique</h3>
+          </div>
+          <div class="col-md-2 col-sm-12 text-left">
+              <h4>Footware</h3>
+          </div>
+          <div class="col-md-2 col-sm-12 text-left">
+              <h4>Tops</h3>
+          </div>
+          <div class="col-md-2 col-sm-12 text-left">
+              <h4>Bottom</h3>
+          </div>
+          <div class="col-md-2 col-sm-12 text-left">
+              <h4>About Us</h3>
+          </div>
+      </div>
+
+      <div class="row justify-content-end p-1 align-items-center text-center footer" style="background-color: #e76b8e;">
+          <div class="col-md-5 d-flex justify-content-end">
+              <div class="token"><img src="Images/token_tiktok.png"/></div>
+              <div class="token"><img src="Images/token_instagram.png"></div>
+              <div class="token"><img src="Images/token_facebook.png"/></div>
+              <div class="token"><img src="Images/token_youtube.png"/></div>
+              <div class="padd-8">Social Accounts</div>
+          </div>
+          <div class="col-md-2 d-flex justify-content-end">
+              1801 N Broad St, Philadelphia, PA 19122
+          </div>
+      </div>
+  </section>
 
     <script
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
