@@ -5,3 +5,8 @@ table{
 .table-img{
     max-width: 90%;
 }
+
+.title-hr{
+    max-width: 50%;
+    background-color: #B188CC;
+}
