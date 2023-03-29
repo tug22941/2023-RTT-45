@@ -66,43 +66,50 @@ div > .col-md-3 {
   transition: 2s linear;
 }
 
-
-
 .tshirts {
-  background-image: linear-gradient(rgba(0, 1, 9, 0), rgba(0, 0, 0, 0.7)),
-    url(../Images/tshirts.jpg);
+  background-image: url(../Images/tshirts.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .trousers {
-  background-image: linear-gradient(rgba(0, 1, 9, 0), rgba(0, 0, 0, 0.7)),
-    url(../Images/trousers.jpg);
+  background-image: url(../Images/trousers.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .shirts {
-  background-image: linear-gradient(rgba(0, 1, 9, 0), rgba(0, 0, 0, 0.7)),
-    url(../Images/shirts.jpg);
+  background-image: url(../Images/shirts.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .jackets {
-  background-image: linear-gradient(rgba(0, 1, 9, 0), rgba(0, 0, 0, 0.7)),
-    url(../Images/jackets.jpg);
+  background-image: url(../Images/jackets.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .coats {
-  background-image: linear-gradient(rgba(0, 1, 9, 0), rgba(0, 0, 0, 0.7)),
-    url(../Images/coats.jpg);
+  background-image: url(../Images/coats.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .hoodies {
-  background-image: linear-gradient(rgba(0, 1, 9, 0), rgba(0, 0, 0, 0.7)),
-    url(../Images/hoodies.jpg);
+  background-image: url(../Images/hoodies.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .leggings {
-  background-image: linear-gradient(rgba(0, 1, 9, 0), rgba(0, 0, 0, 0.7)),
-    url(../Images/leggings.jpg);
+  background-image:url(../Images/leggings.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .shorts {
-  background-image: linear-gradient(rgba(0, 1, 9, 0), rgba(0, 0, 0, 0.7)),
-    url(../Images/shorts.jpg);
+  background-image:url(../Images/shorts.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .suits {
-  background-image: linear-gradient(rgba(0, 1, 9, 0), rgba(0, 0, 0, 0.7)),
-    url(../Images/suits.jpg);
+  background-image:url(../Images/suits.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .sz-20{

@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6ba7219-767b-407a-9e23-a1a81286ee2c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../HTML_SBA/Styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../HTML_SBA/Styles/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HTML_SBA/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../HTML_SBA/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/database/dao/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/database/dao/EmployeeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/employee/employee-search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/employee/employee-search.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pub/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pub/css/global.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
