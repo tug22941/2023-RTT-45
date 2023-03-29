@@ -3,10 +3,6 @@ body {
   height: 100%;
 }
 
-body {
-
-}
-
 .form-signin {
   width: 100%;
   max-width: 330px;
@@ -38,5 +34,5 @@ body {
 }
 
 .fill{
-    height: 72.2vh;
+    height: 76.3vh;
 }

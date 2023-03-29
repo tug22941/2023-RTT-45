@@ -16,13 +16,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/signup.css">
-
-</head>
 </head>
 <body>
+  <!-- Navigation -->
   <section>
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
-      <a class="navbar-brand" href="index.html">Betty's Botique</a>
+      <a class="navbar-brand" href="index.html"><h3>Betty's Botique</h3></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -53,107 +52,136 @@
     </nav>
   </section>
 
+  <!-- Content Header-->
     <section class="py-3">
         <div class="container text-center">
             <h2>New Account</h2>
         </div>
     </section>
 
+  <!-- Content -->
     <section class="py-2">
         <div class="container f-container">
             <form id="formId">
                 <div class="row justify-content-center">
                   <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
-                    <label for="txtFirstName" class="form-label reqInput">First Name <small>Required</small></label>
-                    <input type="text" class="form-control" id="txtFirstName">
-                    <div id="txtFirstNameHelp" class="form-text"></div>
+                    <label for="txtFirstName" class="form-label">First Name <small>Required</small></label>
+                    <input type="text" class="form-control input reqInput" id="txtFirstName">
+                    <small id="firstNameHelp" class="form-text text-danger field"></small>
                   </div>
                   <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
-                    <label for="txtLastName" class="form-label reqInput">Last Name <small>Required</small></label>
-                    <input type="text" class="form-control" id="txtLastName">
-                    <div id="txtLastNameHelp" class="form-text"></div>
+                    <label for="txtLastName" class="form-label">Last Name <small>Required</small></label>
+                    <input type="text" class="form-control input reqInput" id="txtLastName">
+                    <small id="lastNameHelp" class="form-text text-danger field"></small>
                   </div>
                 </div>
 
                 <div class="row justify-content-center align-items-center">
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
-                      <label for="txtemail" class="form-label reqInput">Email Address <small>Required</small></label>
-                      <input type="email" class="form-control" id="txtEmail" aria-describedby="emailHelp">
-                      <div id="txtEmailHelp" class="form-text"></div>
-                  </div>
+                      <label for="txtemail" class="form-label">Email Address <small>Required</small></label>
+                      <input type="email" class="form-control input reqInput" id="txtEmail" aria-describedby="emailHelp">
+                      <small id="emailHelp" class="form-text text-danger field"></small>
+                    </div>
 
                   <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
-                    <!-- Empty Column for styling-->
+                    <!-- empty column for styling-->
                   </div>
 
                 </div>
               
                 <div class="row justify-content-center">
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
-                      <label for="txtPassword" class="form-label reqInput">Password <small>Required</small></label>
-                      <input type="password" class="form-control" id="txtPassword">
-                      <div id="txtPasswordHelp" class="form-text"></div>
+                      <label for="txtPassword" class="form-label">Password <small>Required</small></label>
+                      <input type="password" class="form-control input reqInput" id="txtPassword">
+                      <small id="passwordHelp" class="form-text text-danger field"></small>
                     </div>
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
-                      <label for="txtConfirmPassword" class="form-label reqInput">Confirm Password<small>Required</small></label>
-                      <input type="password" class="form-control" id="txtConfirmPassword">
-                      <div id="txtConfirmPasswordHelp" class="form-text"></div>
-  
+                      <label for="txtConfirmPassword" class="form-label">Confirm Password<small>Required</small></label>
+                      <input type="password" class="form-control input-group input reqInput" id="txtConfirmPassword">
+                      <small id="confirmPasswordHelp" class="form-text text-danger field"></small>
                     </div>
                 </div>
 
                 <div class="row justify-content-center">
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
-                      <label for="txtPhoneNumber" class="form-label reqInput">Phone Number<small>Required</small></label>
-                      <input type="text" class="form-control" id="txtPhoneNumber">
+                      <label for="txtPhoneNumber" class="form-label">Phone Number<small>Required</small></label>
+                      <input type="text" class="form-control input reqInput" id="txtPhoneNumber">
+                      <small id="phoneNumberHelp" class="form-text text-danger field"></small>
                     </div>
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
                         <label for="txtCompany" class="form-label">Company</label>
-                        <input type="text" class="form-control" id="txtCompany">
+                        <input type="text" class="form-control input" id="txtCompany">
+                        <small id="companyHelp" class="form-text text-danger field"></small>
                       </div>
                 </div>
 
                 <div class="row justify-content-center">
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
-                        <label for="txtAddressLine1" class="form-label reqInput">Address Line 1<small>Required</small></label>
-                        <input type="text" class="form-control" id="txtAddressLine1">
+                        <label for="txtAddressLine1" class="form-label">Address Line 1<small>Required</small></label>
+                        <input type="text" class="form-control input reqInput" id="txtAddressLine1">
+                        <small id="addressLine1Help" class="form-text text-danger field"></small>
                       </div>
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
                       <label for="txtAddressLine2" class="form-label">Address Line 2</label>
-                      <input type="text" class="form-control" id="txtAddressLine2">
+                      <input type="text" class="form-control input" id="txtAddressLine2">
+                      <small id="addressLine2Help" class="form-text text-danger field"></small>
                     </div>
                 </div>
 
                 <div class="row justify-content-center align-items-center">
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
                         <label for="ddlCountry" class="form-label">Country <small>Required</small></label>
-                        <select id="ddlCountry" class="form-select form-control">
+                        <select id="ddlCountry" class="form-select form-control input reqInput">
                             <option selected></option>
                             <option value="USA">USA</option>
                             <option value="GHAN">Ghana</option>
                             <option value="BZ">Brazil</option>
                             <option value="NZ">New Zealand</option>
                         </select>
+                        <small id="countryHelp" class="form-text text-danger field"></small>
+
                     </div>
 
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
                         <label for="txtState" class="form-label">State <small>Required</small></label>
-                        <input type="text" class="form-control" id="txtState">
+                        <input type="text" class="form-control input reqInput" id="txtState">
+                        <small id="stateHelp" class="form-text text-danger field"></small>
                     </div>
                 </div>
               
                 <div class="row justify-content-center">
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
                       <label for="txtCity" class="form-label">City <small>Required</small></label>
-                      <input type="text" class="form-control" id="txtCity">
-                      <div id="txtCityHelp" class="form-text"></div>
+                      <input type="text" class="form-control input reqInput" id="txtCity">
+                      <small id="cityHelp" class="form-text text-danger field"></small>
                     </div>
                     <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
                       <label for="txtZipCode" class="form-label">Zip Code<small>Required</small></label>
-                      <input type="text" class="form-control" id="txtZipCode">
-                      <div id="txtZipCodeHlep" class="form-text"></div>
+                      <input type="text" class="form-control input reqInput" id="txtZipCode">
+                      <small id="zipCodeHelp" class="form-text text-danger field"></small>
                     </div>
                   </div>
+
+                  <div class="row justify-content-center align-items-center">
+                    <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Sign Up With Free Membership
+                        </label>
+                      </div>
+                    </div>
+
+                  <div class="mb-3 col-md-6 col-sm-12 col-xl-5">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Sign Up With Premium Membership
+                      </label>
+                    </div>
+                  </div>
+
+                </div>
               
               
                 <div class="row justify-content-center">
@@ -166,34 +194,31 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <section>
-      <div class="row justify-content-start mt-2 p-3 align-items-center text-center footer" style="background-color: #F1BB7F; border-top:2px solid #7a5b36">
+      <div class="row justify-content-start mt-2 p-2 align-items-end text-center" style="background-color: #F1BB7F; border-top:2px solid #7a5b36">
           <div class="col-md-2 col-sm-12">
-              <h2>Betty's Botique</h3>
+              <a href="index.html"><h2>Betty's Botique</h2></a>
           </div>
-          <div class="col-md-2 col-sm-12 text-left">
-              <h4>Footware</h3>
-          </div>
-          <div class="col-md-2 col-sm-12 text-left">
-              <h4>Tops</h3>
-          </div>
-          <div class="col-md-2 col-sm-12 text-left">
-              <h4>Bottom</h3>
-          </div>
-          <div class="col-md-2 col-sm-12 text-left">
-              <h4>About Us</h3>
+          <div class="col-md-6 col-sm-12">
+              <div class="row justify-content-around">
+                <a href="" class="col-sm-12 col-md-3"><h5>Footware</h5></a>
+                <a href="" class="col-sm-12 col-md-3"><h5>Tops</h5></a>
+                <a href="" class="col-sm-12 col-md-3"><h5>Bottom</h5></a>
+                <a href="" class="col-sm-12 col-md-3"><h5>About Us</h5></a>
+              </div>
           </div>
       </div>
 
-      <div class="row justify-content-end p-1 align-items-center text-center footer" style="background-color: #e76b8e;">
-          <div class="col-md-5 d-flex justify-content-end">
-              <div class="token"><img src="Images/token_tiktok.png"/></div>
-              <div class="token"><img src="Images/token_instagram.png"></div>
-              <div class="token"><img src="Images/token_facebook.png"/></div>
-              <div class="token"><img src="Images/token_youtube.png"/></div>
-              <div class="padd-8">Social Accounts</div>
+      <div class="row justify-content-end p-1 px-1 align-items-center text-center flex-wrap-reverse" style="background-color: #e76b8e;">
+          <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
+              <div class="token"><a href="https://www.tiktok.com/en/"><img src="Images/token_tiktok.png"/></a></div>
+              <div class="token"><a href="https://www.instagram.com/"><img src="Images/token_instagram.png"></a></div>
+              <div class="token"><a href="https://www.facebook.com/"><img src="Images/token_facebook.png"/></a></div>
+              <div class="token"><a href="https://www.youtube.com/"><img src="Images/token_youtube.png"/></a></div>
+              <div class="font-weight-bold">Social Accounts</div>
           </div>
-          <div class="col-md-2 d-flex justify-content-end">
+          <div class="col-md-2 col-sm-12">
               1801 N Broad St, Philadelphia, PA 19122
           </div>
       </div>

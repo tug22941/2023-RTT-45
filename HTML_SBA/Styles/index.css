@@ -1,4 +1,3 @@
-/*Hero Image Style*/
 .hero-image {
   background-image: linear-gradient(rgba(0, 1, 9, 0), rgba(0, 0, 0, 0.7)),
     url(../Images/hero.jpg);
@@ -47,11 +46,6 @@ div > .col-md-3 {
   width: 80%;
 }
 
-hr {
-  width: 90%;
-  background-color: #f45491;
-}
-
 .label {
   text-align: center;
   position: absolute;
@@ -71,6 +65,8 @@ hr {
   -webkit-filter: brightness(150%);
   transition: 2s linear;
 }
+
+
 
 .tshirt {
   background-image: linear-gradient(rgba(0, 1, 9, 0), rgba(0, 0, 0, 0.7)),
@@ -109,3 +105,6 @@ hr {
     url(../Images/suits.jpg);
 }
 
+.sz-20{
+  font-size: 20px !important;
+}
