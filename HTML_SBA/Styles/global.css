@@ -1,21 +1,40 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap");
-* {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 body {
   background-color: #f1ebe7;
-  min-width: 150px;
+  min-width: 230px;
+  overflow-x: hidden;
+}
+h1,h2,h3,h4,h5 {
+  font-family: "Playfair Display", serif;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+hr {
+  width: 90%;
+  background-color: #f45491;
+}
+a{
+  color:#000;
+}
+a:hover{
+  text-decoration: none;
 }
 
+
 .navbar {
-  border: 1px rgb(255 96 0 / 45%) solid;
+  border-top: 1px rgb(255 96 0 / 45%) solid;
+  border-bottom: 1px rgb(255 96 0 / 45%) solid;
   padding: 10px;
+  justify-content: center;
+  text-align: center;
 }
+
 .form-control {
   border-color: #000;
-}
-h2 {
-  font-family: "Playfair Display", serif;
 }
 
 .token {
@@ -25,26 +44,4 @@ h2 {
 .token img {
   width: 100%;
 }
-.padd-8 {
-  padding: 8px;
-}
-.address {
-  font-size: 12px;
-  color: rgb(179, 176, 176);
-  margin: 0 10px;
-}
 
-img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-hr {
-  width: 90%;
-  background-color: #f45491;
-}
-
-.footer > .col-md-2,
-.col-md-1 {
-  justify-content: center;
-}

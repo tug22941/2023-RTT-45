@@ -17,26 +17,19 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap"
       rel="stylesheet"
     />
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/4.0/examples/sign-in/"
+    />
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/signin.css" />
-    <style>
-      .about-col{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-      }
-      .button{
-        max-width: 40%;
-      }
-    </style>
   </head>
   <body>
+    <!-- Navigation -->
     <section>
       <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
-        <a class="navbar-brand" href="index.html">Betty's Botique</a>
+        <a class="navbar-brand" href="index.html"><h3>Betty's Botique</h3></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -67,58 +60,94 @@
       </nav>
     </section>
 
+    <!-- Content -->
     <section>
-        <div class="row align-items-center fill">
-            <form class="form-signin">
-                <h1 class="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
-                <label for="inputEmail" class="sr-only">Email address</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                <div class="checkbox mb-3 text-center">
-                  <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                  </label>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                <p class="mt-5 mb-3 text-muted text-center">&copy; 2023 - 2024</p>
-              </form>
-        </div>
+      <div class="row align-items-center fill">
+        <form class="form-signin">
+          <h1 class="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <input
+            type="email"
+            id="inputEmail"
+            class="form-control"
+            placeholder="Email address"
+            required
+            autofocus
+          />
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input
+            type="password"
+            id="inputPassword"
+            class="form-control"
+            placeholder="Password"
+            required
+          />
+          <div class="checkbox mb-3 text-center">
+            <label>
+              <input type="checkbox" value="remember-me" /> Remember me
+            </label>
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">
+            Sign in
+          </button>
+          <p class="mt-5 mb-3 text-muted text-center">&copy; 2023 - 2024</p>
+        </form>
+      </div>
     </section>
 
+    <!-- Footer -->
     <section>
-        <div class="row justify-content-start mt-2 p-3 align-items-center text-center footer" style="background-color: #F1BB7F; border-top:2px solid #7a5b36">
-            <div class="col-md-2 col-sm-12">
-                <h2>Betty's Botique</h3>
-            </div>
-            <div class="col-md-2 col-sm-12 text-left">
-                <h4>Footware</h3>
-            </div>
-            <div class="col-md-2 col-sm-12 text-left">
-                <h4>Tops</h3>
-            </div>
-            <div class="col-md-2 col-sm-12 text-left">
-                <h4>Bottom</h3>
-            </div>
-            <div class="col-md-2 col-sm-12 text-left">
-                <h4>About Us</h3>
-            </div>
+      <div
+        class="row justify-content-start mt-2 p-2 align-items-end text-center"
+        style="background-color: #f1bb7f; border-top: 2px solid #7a5b36"
+      >
+        <div class="col-md-2 col-sm-12">
+          <a href="index.html"><h2>Betty's Botique</h2></a>
         </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="row justify-content-around">
+            <a href="" class="col-sm-12 col-md-3"><h5>Footware</h5></a>
+            <a href="" class="col-sm-12 col-md-3"><h5>Tops</h5></a>
+            <a href="" class="col-sm-12 col-md-3"><h5>Bottom</h5></a>
+            <a href="" class="col-sm-12 col-md-3"><h5>About Us</h5></a>
+          </div>
+        </div>
+      </div>
 
-        <div class="row justify-content-end p-1 align-items-center text-center footer" style="background-color: #e76b8e;">
-            <div class="col-md-5 d-flex justify-content-end">
-                <div class="token"><img src="Images/token_tiktok.png"/></div>
-                <div class="token"><img src="Images/token_instagram.png"></div>
-                <div class="token"><img src="Images/token_facebook.png"/></div>
-                <div class="token"><img src="Images/token_youtube.png"/></div>
-                <div class="padd-8">Social Accounts</div>
-            </div>
-            <div class="col-md-2 d-flex justify-content-end">
-                1801 N Broad St, Philadelphia, PA 19122
-            </div>
+      <div
+        class="row justify-content-end p-1 px-1 align-items-center text-center flex-wrap-reverse"
+        style="background-color: #e76b8e"
+      >
+        <div
+          class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center"
+        >
+          <div class="token">
+            <a href="https://www.tiktok.com/en/"
+              ><img src="Images/token_tiktok.png"
+            /></a>
+          </div>
+          <div class="token">
+            <a href="https://www.instagram.com/"
+              ><img src="Images/token_instagram.png"
+            /></a>
+          </div>
+          <div class="token">
+            <a href="https://www.facebook.com/"
+              ><img src="Images/token_facebook.png"
+            /></a>
+          </div>
+          <div class="token">
+            <a href="https://www.youtube.com/"
+              ><img src="Images/token_youtube.png"
+            /></a>
+          </div>
+          <div class="font-weight-bold">Social Accounts</div>
         </div>
+        <div class="col-md-2 col-sm-12">
+          1801 N Broad St, Philadelphia, PA 19122
+        </div>
+      </div>
     </section>
-
 
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -135,6 +164,6 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-
+    <script src="Scripts/signin.js"></script>
   </body>
 </html>
