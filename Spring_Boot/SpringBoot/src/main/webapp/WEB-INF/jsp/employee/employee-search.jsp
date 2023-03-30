@@ -14,9 +14,14 @@
             <div class="col-7">
             <form>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" name="search" value="${searchParam}" placeholder="Employee First name" aria-label="Employee First Name" aria-describedby="search">
-                  <button class="btn btn-outline-secondary" id="search">Search</button>
+                    <input type="text" class="form-control" name="firstName" placeholder="Employee First Name"
+                    aria-label="Employee First Name" value="${searchParamFirst}">
                 </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="lastName" placeholder="Employee Last Name"
+                    aria-label="Employee Last Name" value="${searchParamLast}">
+                </div>
+                <button class="btn btn-outline-secondary" id="search">Search</button>
             </form>
             </div>
         </div>

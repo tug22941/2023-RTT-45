@@ -23,8 +23,9 @@ const addressRE = new RegExp(/^[#.0-9a-zA-Z\s,-]+$/);
 const zipcodeRE = new RegExp(/^\d{5}(?:[-\s]\d{4})?$/);
 
 //get submit button element: add click event listener: implement action
-let submit = document.getElementById("btnSubmit");
-submit.addEventListener("click", function () {
+
+$("#btnSubmit").click(function(){
+  alert('clicked!');
   clearWarnings();
 
   const reqInputs = document.getElementsByClassName("reqInput");
