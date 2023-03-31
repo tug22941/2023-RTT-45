@@ -35,7 +35,7 @@
   </head>
   <body>
       <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="/index">Navbar</a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -60,9 +60,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/bootstrap">BootStrap Ex</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/employee-search">Employee Search</a>
-                </li>
                 <li class="nav-item dropdown">
                     <a
                     class="nav-link dropdown-toggle"
@@ -72,15 +69,14 @@
                     aria-haspopup="true"
                     aria-expanded="false"
                     >
-                    Dropdown link
+                    Employee
                     </a>
                     <div
                     class="dropdown-menu"
                     aria-labelledby="navbarDropdowfnMenuLink"
                     >
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="/employee/search">Search</a>
+                    <a class="dropdown-item" href="/employee/create">Create</a>
                     </div>
                 </li>
                 </ul>

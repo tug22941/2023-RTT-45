@@ -7,6 +7,14 @@ import springexamples.database.entity.Employee;
 import java.util.List;
 
 public interface EmployeeDAO extends JpaRepository<Employee, Long> {
+
+    //this is a native query - SpringBoot does the work (TRUE POWAH!!)
+    //appended "IgnoreCase" onto the variable name to remove case sensitivity
+    List<Employee> findByFirstNameContainingOrLastNameContainingIgnoreCase(String firstName, String lastName);
+    List<Employee> findByFirstNameContainingIgnoreCase(String firstName);
+    List<Employee> findByLastNameContainingIgnoreCase(String lastName);
+    Employee findById(Integer id);
+
     /*
     //this is a JPA hibernate query
     @Query("FROM Employee e")
@@ -20,12 +28,4 @@ public interface EmployeeDAO extends JpaRepository<Employee, Long> {
     @Query("Select e from Employee e where lower(e.firstName) = lower(:firstName)")
     List<Employee> usingJPAQuery(String firstName, String lastName);
     */
-
-    //this is a native query - SpringBoot does the work (TRUE POWAH!!)
-    //appended "IgnoreCase" onto the variable name to remove case sensitivity
-    List<Employee> findByFirstNameContainingOrLastNameContainingIgnoreCase(String firstName, String lastName);
-    List<Employee> findByFirstNameContainingIgnoreCase(String firstName);
-    List<Employee> findByLastNameContainingIgnoreCase(String lastName);
-
-
 }
