@@ -25,7 +25,6 @@ const zipcodeRE = new RegExp(/^\d{5}(?:[-\s]\d{4})?$/);
 //get submit button element: add click event listener: implement action
 
 $("#btnSubmit").click(function(){
-  alert('clicked!');
   clearWarnings();
 
   const reqInputs = document.getElementsByClassName("reqInput");

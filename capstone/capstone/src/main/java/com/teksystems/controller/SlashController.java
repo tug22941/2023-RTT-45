@@ -30,10 +30,13 @@ public class SlashController {
     public ModelAndView signup() {
         log.info("In the signup controller method");
         ModelAndView response = new ModelAndView("signup");
+        return response;
+    }
 
-        //if(!StringUtils.isEmpty(signup)){
-        //}
-
+    @RequestMapping(value = "/signin", method = RequestMethod.GET)
+    public ModelAndView signin() {
+        log.info("In the signin controller method");
+        ModelAndView response = new ModelAndView("signin");
         return response;
     }
 

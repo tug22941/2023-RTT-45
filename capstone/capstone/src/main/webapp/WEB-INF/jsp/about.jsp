@@ -1,5 +1,5 @@
 <jsp:include page="include/header.jsp" />
-<link rel="stylesheet" href="../../../pub/css/about.css" />
+<link rel="stylesheet" href="/pub/css/about.css" />
     <style>
       .about-col{
         display: flex;

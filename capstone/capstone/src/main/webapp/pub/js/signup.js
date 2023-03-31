@@ -23,150 +23,153 @@ const addressRE = new RegExp(/^[#.0-9a-zA-Z\s,-]+$/);
 const zipcodeRE = new RegExp(/^\d{5}(?:[-\s]\d{4})?$/);
 
 //get submit button element: add click event listener: implement action
-$("#btnSubmit").click(function(){
-  alert('clicked!');
-  clearWarnings();
+$( document ).ready(function() {
+    $("#btnSubmit").click(function(){
+      clearWarnings();
 
-  const reqInputs = document.getElementsByClassName("reqInput");
-  let noBlanks = true;
-  for (let i = reqInputs.length - 1; i >= 0; i--) {
-    let element = reqInputs[i];
-    if (IsBlank(element)) {
-      displayWarning(element, 0);
-      element.focus();
-      noBlanks = false;
-    }
-  }
-  if (!noBlanks) {
-    return;
-  }
-
-  let allValid = true;
-  let doFirst = []; //hold first invalid element to direct focus to at function end
-
-  //name validation
-  let firstName = document.getElementById("txtFirstName");
-  let lastName = document.getElementById("txtLastName");
-
-  if (!validName(firstName)) {
-    doFirst.push(firstName, 2);
-    allValid = false;
-  }
-  if (!validName(lastName)) {
-    if (doFirst.length == 0) {
-      doFirst.push(lastName, 2);
-    } else {
-      displayWarning(lastName, 2);
-    }
-    allValid = false;
-  }
-
-  //email validation
-  let email = document.getElementById("txtEmail");
-  if (!validEmail(email)) {
-    if (doFirst.length == 0) {
-      doFirst.push(email, 2);
-    } else {
-      displayWarning(email, 2);
-    }
-    allValid = false;
-  }
-
-  //password validation
-  let password = document.getElementById("txtPassword");
-  let confirmPassword = document.getElementById("txtConfirmPassword");
-  if (matchPasswords(password, confirmPassword)) {
-    if (!validPassword(password)) {
-      if (doFirst.length == 0) {
-        doFirst.push(password, 2);
-      } else {
-        displayWarning(confirmPassword, 2);
-        displayWarning(password, 2);
+      const reqInputs = document.getElementsByClassName("reqInput");
+      let noBlanks = true;
+      for (let i = reqInputs.length - 1; i >= 0; i--) {
+        let element = reqInputs[i];
+        if (IsBlank(element)) {
+          displayWarning(element, 0);
+          element.focus();
+          noBlanks = false;
+        }
       }
-      allValid = false;
-    }
-  } else {
-    displayWarning(confirmPassword, 1);
-    displayWarning(password, 1);
-    allValid = false;
-  }
-
-  //phone number validation
-  let phoneNumber = document.getElementById("txtPhoneNumber");
-  if (!validPhoneNumber(phoneNumber)) {
-    if (doFirst.length == 0) {
-      doFirst.push(phoneNumber, 2);
-    } else {
-      displayWarning(phoneNumber, 2);
-    }
-    allValid = false;
-  }
-
-  //address validation
-  let address1 = document.getElementById("txtAddressLine1");
-  let address2 = document.getElementById("txtAddressLine2");
-  if (!validAddress(address1)) {
-    if (doFirst.length == 0) {
-      doFirst.push(address1, 2);
-    } else {
-      displayWarning(address1, 2);
-    }
-    allValid = false;
-  }
-  if (address2.value != "") {
-    if (!validAddress(address2)) {
-      if (doFirst.length == 0) {
-        doFirst.push(address2, 2);
-      } else {
-        displayWarning(address2, 2);
+      if (!noBlanks) {
+        return;
       }
-      allValid = false;
-    }
-  }
 
-  //state validation
-  let state = document.getElementById("txtState");
-  if (!validName(state)) {
-    if (doFirst.length == 0) {
-      doFirst.push(state, 2);
-    } else {
-      displayWarning(state, 2);
-    }
-    allValid = false;
-  }
+      let allValid = true;
+      let doFirst = []; //hold first invalid element to direct focus to at function end
 
-  //city validation
-  let city = document.getElementById("txtCity");
-  if (!validName(city)) {
-    if (doFirst.length == 0) {
-      doFirst.push(city, 2);
-    } else {
-      displayWarning(city, 2);
-    }
-    allValid = false;
-  }
+      //name validation
+      let firstName = document.getElementById("txtFirstName");
+      let lastName = document.getElementById("txtLastName");
 
-  //zipcode validation
-  let zipcode = document.getElementById("txtZipCode");
-  if (!validZipCode(zipcode)) {
-    if (doFirst.length == 0) {
-      doFirst.push(zipcode, 2);
-    } else {
-      displayWarning(zipcode, 2);
-    }
-    allValid = false;
-  }
+      if (!validName(firstName)) {
+        doFirst.push(firstName, 2);
+        allValid = false;
+      }
+      if (!validName(lastName)) {
+        if (doFirst.length == 0) {
+          doFirst.push(lastName, 2);
+        } else {
+          displayWarning(lastName, 2);
+        }
+        allValid = false;
+      }
 
-  //validate Input with the first element
-  if (doFirst.length != 0) {
-    displayWarning(doFirst[0], doFirst[1]);
-  }
+      //email validation
+      let email = document.getElementById("txtEmail");
+      if (!validEmail(email)) {
+        if (doFirst.length == 0) {
+          doFirst.push(email, 2);
+        } else {
+          displayWarning(email, 2);
+        }
+        allValid = false;
+      }
 
-  //check for all valid input
-  if (allValid) {
-    console.log("All Valid!");
-  }
+      //password validation
+      let password = document.getElementById("txtPassword");
+      let confirmPassword = document.getElementById("txtConfirmPassword");
+      if (matchPasswords(password, confirmPassword)) {
+        if (!validPassword(password)) {
+          if (doFirst.length == 0) {
+            doFirst.push(password, 2);
+          } else {
+            displayWarning(confirmPassword, 2);
+            displayWarning(password, 2);
+          }
+          allValid = false;
+        }
+      } else {
+        displayWarning(confirmPassword, 1);
+        displayWarning(password, 1);
+        allValid = false;
+      }
+
+      //phone number validation
+      let phoneNumber = document.getElementById("txtPhoneNumber");
+      if (!validPhoneNumber(phoneNumber)) {
+        if (doFirst.length == 0) {
+          doFirst.push(phoneNumber, 2);
+        } else {
+          displayWarning(phoneNumber, 2);
+        }
+        allValid = false;
+      }
+
+      //address validation
+      let address1 = document.getElementById("txtAddressLine1");
+      let address2 = document.getElementById("txtAddressLine2");
+      if (!validAddress(address1)) {
+        if (doFirst.length == 0) {
+          doFirst.push(address1, 2);
+        } else {
+          displayWarning(address1, 2);
+        }
+        allValid = false;
+      }
+      if (address2.value != "") {
+        if (!validAddress(address2)) {
+          if (doFirst.length == 0) {
+            doFirst.push(address2, 2);
+          } else {
+            displayWarning(address2, 2);
+          }
+          allValid = false;
+        }
+      }
+
+      //state validation
+      let state = document.getElementById("txtState");
+      if (!validName(state)) {
+        if (doFirst.length == 0) {
+          doFirst.push(state, 2);
+        } else {
+          displayWarning(state, 2);
+        }
+        allValid = false;
+      }
+
+      //city validation
+      let city = document.getElementById("txtCity");
+      if (!validName(city)) {
+        if (doFirst.length == 0) {
+          doFirst.push(city, 2);
+        } else {
+          displayWarning(city, 2);
+        }
+        allValid = false;
+      }
+
+      //zipcode validation
+      let zipcode = document.getElementById("txtZipCode");
+      if (!validZipCode(zipcode)) {
+        if (doFirst.length == 0) {
+          doFirst.push(zipcode, 2);
+        } else {
+          displayWarning(zipcode, 2);
+        }
+        allValid = false;
+      }
+
+      //validate Input with the first element
+      if (doFirst.length != 0) {
+        displayWarning(doFirst[0], doFirst[1]);
+      }
+
+      //check for all valid input
+      if (allValid) {
+        console.log("All Valid!");
+      }
+    });
 });
+
+        //FUNCTIONS
 
 // blank validation function
 function IsBlank(element) {
@@ -227,6 +230,7 @@ function validZipCode(element) {
     return false;
   }
 }
+
 
 //display warning function
 function displayWarning(element, num) {
@@ -399,3 +403,4 @@ function clearWarnings() {
     element.textContent = "";
   }
 }
+

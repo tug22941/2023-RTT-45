@@ -31,7 +31,7 @@ public class Employee {
     private String firstName;
 
     @Column(name="extension")
-    private String extenstion;
+    private String extension;
 
     @Column(name="email")
     private String email;
@@ -55,7 +55,7 @@ public class Employee {
         int result = 1;
         result = prime * result + ((customers == null) ? 0 : customers.hashCode());
         result = prime * result + ((email == null) ? 0 : email.hashCode());
-        result = prime * result + ((extenstion == null) ? 0 : extenstion.hashCode());
+        result = prime * result + ((extension == null) ? 0 : extension.hashCode());
         result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((jobTitle == null) ? 0 : jobTitle.hashCode());
@@ -85,10 +85,10 @@ public class Employee {
                 return false;
         } else if (!email.equals(other.email))
             return false;
-        if (extenstion == null) {
-            if (other.extenstion != null)
+        if (extension == null) {
+            if (other.extension != null)
                 return false;
-        } else if (!extenstion.equals(other.extenstion))
+        } else if (!extension.equals(other.extension))
             return false;
         if (firstName == null) {
             if (other.firstName != null)
