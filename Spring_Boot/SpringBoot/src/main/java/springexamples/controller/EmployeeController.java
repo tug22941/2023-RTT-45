@@ -32,7 +32,7 @@ public class EmployeeController {
     /*
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     public ModelAndView employeeSearch(@RequestParam(required = false) String search) {
-        log.info("In the employee search controller method with search = " + search);
+        log.debug("In the employee search controller method with search = " + search);
 
         ModelAndView response = new ModelAndView("employee/employee-search");
 
@@ -47,7 +47,7 @@ public class EmployeeController {
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     public ModelAndView employeeSearch(@RequestParam(required = false) String firstName,
                                        @RequestParam(required = false) String lastName) {
-        log.info("In the employee search controller method with firstName = " + firstName + " & lastName = " + lastName);
+        log.debug("In the employee search controller method with firstName = " + firstName + " & lastName = " + lastName);
 
         ModelAndView response = new ModelAndView("employee/search");
         List<Employee> employees = new ArrayList<>();
@@ -55,7 +55,7 @@ public class EmployeeController {
         employees = employeeDAO.usingANativeQuery(firstName,lastName);
         //employees = employeeDAO.usingJPAQuery(firstName,lastName);
 
-        log.info("Searching for both First and Last name.");
+        log.debug("Searching for both First and Last name.");
 
         response.addObject("searchParamFirst", firstName);
         response.addObject("searchParamLast", lastName);
@@ -70,24 +70,24 @@ public class EmployeeController {
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     public ModelAndView employeeSearch(@RequestParam(required = false) String firstName,
                                        @RequestParam(required = false) String lastName) {
-        log.info("In the employee search controller method with firstName = " + firstName + " & lastName = " + lastName);
+        log.debug("In the employee search controller method with firstName = " + firstName + " & lastName = " + lastName);
 
         ModelAndView response = new ModelAndView("employee/search");
         List<Employee> employees = new ArrayList<>();
 
         //first and last name has value
         if(!StringUtils.isEmpty(firstName) && !StringUtils.isEmpty(lastName)){
-            log.info("Both first name and last name has a value");
+            log.debug("Both first name and last name has a value");
             employees = employeeDAO.findByFirstNameContainingOrLastNameContainingIgnoreCase(firstName, lastName);
         }
         //only first name has value
         if(!StringUtils.isEmpty(firstName) && StringUtils.isEmpty(lastName)){
-            log.info("Both first name and last name has a value");
+            log.debug("Both first name and last name has a value");
             employees = employeeDAO.findByFirstNameContainingIgnoreCase(firstName);
         }
         //only last name has value
         if(StringUtils.isEmpty(firstName) && !StringUtils.isEmpty(lastName)){
-            log.info("Both first name and last name has a value");
+            log.debug("Both first name and last name has a value");
             employees = employeeDAO.findByLastNameContainingIgnoreCase(lastName);
         }
 
@@ -101,21 +101,21 @@ public class EmployeeController {
     @GetMapping("/detail/{id}")
     public ModelAndView detail(@PathVariable Integer id){
 
-        log.info("In employee detail controller method with id = " + id);
+        log.debug("In employee detail controller method with id = " + id);
 
         ModelAndView response = new ModelAndView("employee/detail");
         Employee employee = employeeDAO.findById(id);
 
         response.addObject("employee", employee);
 
-        log.info(employee + "");
+        log.debug(employee + "");
         return response;
     }
 
     @GetMapping("/create")
     public ModelAndView create(){
 
-        log.info("In employee create controller method");
+        log.debug("In employee create controller method");
         ModelAndView response = new ModelAndView("employee/create");
 
         List<Office> offices = officeDAO.getAllOffice();
@@ -128,10 +128,16 @@ public class EmployeeController {
     @GetMapping("/createSubmit")
     public ModelAndView createSubmit(EmployeeFormBean form){
 
-        log.info("In employee create-SUBMIT controller method");
-        log.info(form.toString());
+        log.debug("In employee create-SUBMIT controller method");
+        log.debug(form.toString());
+
+        ModelAndView response = new ModelAndView("employee/create");
 
         Employee emp = new Employee();
+        if(form.getId() != null && form.getId() > 0){
+           emp =  employeeDAO.findById(form.getId());
+        }
+
         emp.setFirstName(form.getFirstName());
         emp.setLastName(form.getLastName());
         emp.setOfficeId(form.getOfficeId());
@@ -139,9 +145,33 @@ public class EmployeeController {
         emp.setEmail(form.getEmail());
         emp.setJobTitle(form.getJobTitle());
         emp.setVacationHours(form.getVacationHours());
-
+        emp.setOfficeId(form.getOfficeId());
         employeeDAO.save(emp);
+
+        response.addObject("form",form);
+
+        return response;
+    }
+
+    @GetMapping("/edit/{id}")
+    public ModelAndView edit(@PathVariable Integer id){
+
+        log.debug("In employee edit controller method");
         ModelAndView response = new ModelAndView("employee/create");
+
+        Employee emp = employeeDAO.findById(id);
+        EmployeeFormBean form = new EmployeeFormBean();
+
+        //set the employee form fields: to be added to the model and passed to the jsp page
+        form.setId(emp.getId());
+        form.setFirstName(emp.getFirstName());
+        form.setLastName(emp.getLastName());
+        form.setOfficeId(emp.getOfficeId());
+        form.setExtension(emp.getExtension());
+        form.setEmail(emp.getEmail());
+        form.setJobTitle(emp.getJobTitle());
+        form.setVacationHours(emp.getVacationHours());
+        response.addObject("form",form);
 
         List<Office> offices = officeDAO.getAllOffice();
         response.addObject("offices",offices);

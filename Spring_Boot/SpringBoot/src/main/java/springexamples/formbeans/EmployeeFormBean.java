@@ -9,6 +9,7 @@ import lombok.ToString;
 @ToString
 public class EmployeeFormBean {
 
+    private Integer id;
     private String firstName;
     private String lastName;
     private Integer officeId;
