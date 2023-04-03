@@ -1,7 +1,5 @@
 <jsp:include page="include/header.jsp" />
 <link rel="stylesheet" href="/pub/css/index.css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <!-- Hero Image -->
     <section>
@@ -72,73 +70,26 @@
             <img src="../../../pub/images/dress2.jpg" alt="" />
           </div>
           <div class="col-md-3 col-sm-12">
-            <div
-              id="carouselExampleIndicators"
-              class="carousel slide"
-              data-ride="carousel"
-            >
-              <ol class="carousel-indicators">
-                <li
-                  data-target="#carouselExampleIndicators"
-                  data-slide-to="0"
-                  class="active"
-                ></li>
-                <li
-                  data-target="#carouselExampleIndicators"
-                  data-slide-to="1"
-                ></li>
-                <li
-                  data-target="#carouselExampleIndicators"
-                  data-slide-to="2"
-                ></li>
-              </ol>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img
-                    class="d-block w-100"
-                    src="../../../pub/images/dress_front.jpg"
-                    alt="First slide"
-                  />
+                  <img src="../../../pub/images/dress_front.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img
-                    class="d-block w-100"
-                    src="../../../pub/images/dress_side.jpg"
-                    alt="Second slide"
-                  />
+                  <img src="../../../pub/images/dress_side.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img
-                    class="d-block w-100"
-                    src="../../../pub/images/dress_back.jpg"
-                    alt="Third slide"
-                  />
+                  <img src="../../../pub/images/dress_back.jpg" class="d-block w-100" alt="...">
                 </div>
               </div>
-              <a
-                class="carousel-control-prev"
-                href="#carouselExampleIndicators"
-                role="button"
-                data-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a
-                class="carousel-control-next"
-                href="#carouselExampleIndicators"
-                role="button"
-                data-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="sr-only">Next</span>
-              </a>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
           <hr style="border-top: 1px solid #121212" />
@@ -174,11 +125,6 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Content Extra -->
-    <section>
-
     </section>
 
 <jsp:include page="include/footer.jsp" />

@@ -28,4 +28,14 @@ public interface EmployeeDAO extends JpaRepository<Employee, Long> {
     @Query("Select e from Employee e where lower(e.firstName) = lower(:firstName)")
     List<Employee> usingJPAQuery(String firstName, String lastName);
     */
+
+
+    //Native Query Syntax
+    @Query(value="select * from employees where lower(firstName) like lower(concat('%', :firstName, '%')) or lower(lastName) like lower(concat('%', :lastName, '%'));", nativeQuery = true)
+    List<Employee> usingANativeQuery(String firstName, String lastName);
+
+    //JPA Hibernate Query Syntax
+    @Query("From Employee e where lower(e.firstName) like lower(concat('%', :firstName, '%')) or lower(e.lastName) like lower(concat('%', :lastName, '%'))")
+    List<Employee> usingJPAQuery(String firstName, String lastName);
+
 }
