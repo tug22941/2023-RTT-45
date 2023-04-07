@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a472fa08-2289-42f3-9479-231ce93eaf14" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/springexamples/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springexamples/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springexamples/database/dao/UserRoleDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springexamples/database/entity/UserRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/springexamples/security/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/bootstrap.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/bootstrap.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/signup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springexamples/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springexamples/controller/IndexController.class" afterDir="false" />
-    </list>
+    <list default="true" id="a472fa08-2289-42f3-9479-231ce93eaf14" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680882056292</updated>
       <workItem from="1680882058741" duration="250000" />
-      <workItem from="1680882332344" duration="12603000" />
+      <workItem from="1680882332344" duration="12920000" />
     </task>
     <servers />
   </component>
