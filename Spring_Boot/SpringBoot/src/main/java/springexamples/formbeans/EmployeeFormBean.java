@@ -17,4 +17,5 @@ public class EmployeeFormBean {
     private String email;
     private String jobTitle;
     private Integer vacationHours;
+    private String profileImage;
 }

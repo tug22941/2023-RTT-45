@@ -13,10 +13,22 @@ a{
     </div>
 </section>
 
+<script>
+    function toEdits(){
+        location.href="/employee/edit/${employee.id}";
+    }
+</script>
+
 <section class="py-5 bg-purple">
-    <div class="container text-center">
+    <div class="container text-center d-flex">
         <table class="table table-striped">
             <tbody>
+            <tr>
+                <td>Edit Employee</td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-danger" onclick="toEdits()">Edit Employee Details</button>
+                </td>
+            </tr>
                 <tr>
                     <td>ID #</td>
                     <td>${employee.id}</td>
@@ -44,6 +56,10 @@ a{
                 <tr>
                     <td>Vacation Hours</td>
                     <td>${employee.vacationHours}</td>
+                </tr>
+                <tr>
+                    <td>Profile Image</td>
+                    <td><img src="${employee.profileImage}" class="w-50"/></td>
                 </tr>
             </tbody>
         </table>

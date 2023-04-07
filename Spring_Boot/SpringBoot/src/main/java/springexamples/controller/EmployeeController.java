@@ -125,7 +125,7 @@ public class EmployeeController {
         return response;
     }
 
-    @GetMapping("/createSubmit")
+    @PostMapping("/createSubmit")
     public ModelAndView createSubmit(EmployeeFormBean form){
 
         log.debug("In employee create-SUBMIT controller method");
@@ -137,7 +137,7 @@ public class EmployeeController {
         if(form.getId() != null && form.getId() > 0){
            emp =  employeeDAO.findById(form.getId());
         }
-
+        emp.setProfileImage(form.getProfileImage());
         emp.setFirstName(form.getFirstName());
         emp.setLastName(form.getLastName());
         emp.setOfficeId(form.getOfficeId());
@@ -163,6 +163,7 @@ public class EmployeeController {
         EmployeeFormBean form = new EmployeeFormBean();
 
         //set the employee form fields: to be added to the model and passed to the jsp page
+        form.setProfileImage(emp.getProfileImage());
         form.setId(emp.getId());
         form.setFirstName(emp.getFirstName());
         form.setLastName(emp.getLastName());

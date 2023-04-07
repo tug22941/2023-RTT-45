@@ -1,24 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="ALL" />
+    <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6ba7219-767b-407a-9e23-a1a81286ee2c" name="Changes" comment="">
+    <list default="true" id="a472fa08-2289-42f3-9479-231ce93eaf14" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/springexamples/controller/ErrorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/springexamples/controller/FileUploadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/springexamples/database/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/springexamples/database/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/springexamples/formbeans/CreateUserFormBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/error/404.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/error/500.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/fileupload.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pub/js/signup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/ErrorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/ProductDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/formbeans/ProductFormBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/formbeans/UserFormBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/error/404.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/error/500.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/product/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/user/create.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/controller/EmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/database/dao/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/database/dao/EmployeeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/database/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/database/entity/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/formbeans/EmployeeFormBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/formbeans/EmployeeFormBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/employee/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/employee/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/employee/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/employee/detail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/employee/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/employee/search.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/signup.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/springexamples/controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springexamples/controller/EmployeeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/springexamples/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springexamples/controller/IndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springexamples/database/dao/EmployeeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springexamples/database/dao/EmployeeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springexamples/database/entity/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springexamples/database/entity/Employee.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/springexamples/formbeans/EmployeeFormBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springexamples/formbeans/EmployeeFormBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/SlashController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/SlashController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/include/header.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,9 +66,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -45,7 +73,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2NbPqm16Vum306QDId0ZMqW6dHY" />
+  <component name="ProjectId" id="2O6XYV1jT8naBQuMJLKitKLMl76" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -55,42 +83,22 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/ninjakid362/OneDrive/PNC Bank/Development/SourceTree_RTT45/2023_RTT_45/Spring_Boot/SpringBoot",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.build.tools.auto.reload": "ALL",
-    "settings.editor.selected.configurable": "build.tools",
+    "spring.configuration.checksum": "c8428a45869e78fb361ed20b9c23b0a8",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="springexamples.database.dao" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="springexamples.Main" />
-      <module name="SpringBoot" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="springexamples.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="SpringBoot" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="springexamples.Main" />
@@ -98,21 +106,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d6ba7219-767b-407a-9e23-a1a81286ee2c" name="Changes" comment="" />
-      <created>1679930005740</created>
+      <changelist id="a472fa08-2289-42f3-9479-231ce93eaf14" name="Changes" comment="" />
+      <created>1680882056292</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1679930005740</updated>
-      <workItem from="1680537836442" duration="7768000" />
+      <updated>1680882056292</updated>
+      <workItem from="1680882058741" duration="250000" />
+      <workItem from="1680882332344" duration="795000" />
     </task>
     <servers />
   </component>

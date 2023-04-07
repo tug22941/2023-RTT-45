@@ -21,21 +21,21 @@ public class SlashController {
 
     @RequestMapping(value = "/about", method = RequestMethod.GET)
     public ModelAndView about() {
-        log.info("In the about controller method");
+        log.debug("In the about controller method");
         ModelAndView response = new ModelAndView("about");
         return response;
     }
 
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
     public ModelAndView signup() {
-        log.info("In the signup controller method");
+        log.debug("In the signup controller method");
         ModelAndView response = new ModelAndView("signup");
         return response;
     }
 
     @RequestMapping(value = "/signin", method = RequestMethod.GET)
     public ModelAndView signin() {
-        log.info("In the signin controller method");
+        log.debug("In the signin controller method");
         ModelAndView response = new ModelAndView("signin");
         return response;
     }

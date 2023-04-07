@@ -14,12 +14,28 @@
     </div>
 </section>
 
+<script>
+    function toDetails(){
+        location.href="/employee/detail/${form.id}";
+    }
+</script>
+
 <section>
     <div class="container py-5 bg-light-purple">
         <div class="row justify-content-center">
             <div class="col-10">
-           <form action="/employee/createSubmit">
+           <form action="/employee/createSubmit" method="post">
                <input type="hidden" name="id" value="${form.id}"/>
+               <c:if test="${not empty form.id}">
+                   <div class="mb-3 text-center">
+                       <button type="button" class="btn btn-success" onclick="toDetails()">View Employee Details</button>
+                   </div>
+               </c:if>
+
+               <div class="mb-3">
+                   <label for="profileImage" class="form-label">Profile Image</label>
+                   <input type="text" class="form-control" id="profileImage" name="profileImage" value="${form.profileImage}" aria-describedby="profileImageHelp">
+               </div>
              <div class="mb-3">
                 <label for="firstName" class="form-label">First Name</label>
                 <input type="text" class="form-control" id="firstName" name="firstName"  value="${form.firstName}"  aria-describedby="firstName">
@@ -56,7 +72,12 @@
              <label for="vacationHours" class="form-label">Vacation Hours</label>
              <input type="number" class="form-control" id="vacationHours" name="vacationHours" value="${form.vacationHours}" aria-describedby="vacationHours">
            </div>
-             <button type="submit" class="btn btn-primary">Submit</button>
+               <c:if test="${empty form.id}">
+                   <button type="submit" class="btn btn-primary">Submit</button>
+               </c:if>
+               <c:if test="${not empty form.id}">
+                   <button type="submit" class="btn btn-primary">Edit</button>
+               </c:if>
            </form>
             </div>
         </div>
