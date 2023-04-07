@@ -36,7 +36,6 @@
                         <div id="confirmPasswordHelp" class="form-text">Re-enter your password.</div>
                     </div>
 
-
                     <button type="submit" id="create_btn" class="btn btn-primary mt-3 me-2">Create Account</button>
                 </form>
             </div>

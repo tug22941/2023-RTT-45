@@ -31,6 +31,9 @@
               <a class="nav-link" href="/signup">Signup</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="/login">login</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="/bootstrap">BootStrap Ex</a>
             </li>
             <li class="nav-item">

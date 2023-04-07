@@ -1,5 +1,5 @@
 <jsp:include page="include/header.jsp" />
-<link rel="stylesheet" href="/pub/css/global.css"
+<link rel="stylesheet" href="/pub/css/global.css"/>
 
   <style>
     a:visited{
@@ -28,7 +28,7 @@
   </style>
 
   <h1 class="page-header" id="firsth1">Title Page 1</h1>
-  <h2 class="page-header" style="font-size: 30px ;color:brown;">Title Page 2</h1>
+  <h2 class="page-header" style="font-size: 30px ;color:brown;">Title Page 2</h2>
   <h3>Title Page 3</h3>
   <br>
   <p><a href="https://getbootstrap.com/" target="_blank">This Link Has Been Visited</a></p>
