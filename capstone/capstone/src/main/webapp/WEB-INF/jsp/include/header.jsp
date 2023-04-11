@@ -58,6 +58,10 @@
               </ul>
             </li>
           </ul>
+          <form class="d-flex" action="/product/search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" value="${search}">
+            <button class="btn btn-outline-success">Search</button>
+          </form>
         </div>
       </nav>
     </section>

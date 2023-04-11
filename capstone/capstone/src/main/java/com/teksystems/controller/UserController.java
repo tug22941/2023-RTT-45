@@ -5,6 +5,7 @@ import com.teksystems.database.entity.User;
 import com.teksystems.formbeans.UserFormBean;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,9 @@ public class UserController {
 
     @Autowired
     private UserDAO userDAO;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @GetMapping("/create")
     public ModelAndView create(){
@@ -47,7 +51,10 @@ public class UserController {
         user.setFirstName(form.getFirstName());
         user.setLastName(form.getLastName());
         user.setEmail(form.getEmail());
-        user.setPassword(form.getPassword());
+
+        //This step is required by spring security to encrypt password on creation
+        String encryptedPassword = passwordEncoder.encode(form.getPassword());
+        user.setPassword(encryptedPassword);
 
         userDAO.save(user);
         response.addObject("form",form);
@@ -78,6 +85,18 @@ public class UserController {
         List<User> users = userDAO.getAllUsers();
         response.addObject("usersList", users );
 
+        return response;
+    }
+
+    @GetMapping("/detail/{id}")
+    public ModelAndView detail(@PathVariable Integer id){
+        log.debug("In the User Detail controller method!");
+
+        ModelAndView response = new ModelAndView("user/detail");
+        User user = userDAO.findById(id);
+
+        response.addObject("user",user);
+        log.debug(user + "");
         return response;
     }
 
