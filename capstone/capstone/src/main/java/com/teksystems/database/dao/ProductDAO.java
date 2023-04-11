@@ -15,4 +15,9 @@ public interface ProductDAO extends JpaRepository<Product, Long> {
     //get user by id - JPA hibernate
     @Query("From Product p where p.id = :id")
     Product findById(Integer id);
+
+    //get product matching search
+    @Query(value="select * from products where name like concat('%', :search, '%') or product_type like concat('%', :search, '%') ;", nativeQuery = true)
+    List<Product> findProductsBySearch(String search);
+
 }

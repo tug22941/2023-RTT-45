@@ -15,10 +15,23 @@
     </div>
 </section>
 
+<script>
+    function toDetails(){
+        location.href="/user/detail/${form.id}";
+    }
+</script>
+
 <section class="py-5">
     <div class="container f-container">
         <form id="formId" action="/user/createSubmit">
         <input type="hidden" name="id" value="${form.id}"/>
+            <c:if test="${not empty form.id}">
+                <div class="row justify-content-center">
+                    <div class="mb-3 col-6 col-sm-12 col-xl-6 text-center">
+                        <button type="button" class="btn btn-success" onclick="toDetails()">View User Details</button>
+                    </div>
+                </div>
+            </c:if>
             <div class="row justify-content-center">
                 <div class="mb-3 col-6 col-sm-12 col-xl-6">
                     <label for="firstName" class="form-label">First Name</label>
@@ -46,7 +59,12 @@
 
             <div class="row justify-content-center text-center">
                 <div class="col col-4">
-                    <button  class="btn btn-success" >Submit</button>
+                    <c:if test="${empty form.id}">
+                        <button  class="btn btn-success" >Submit</button>
+                    </c:if>
+                    <c:if test="${not empty form.id}">
+                        <button  class="btn btn-primary" >Edit</button>
+                    </c:if>
                 </div>
             </div>
 

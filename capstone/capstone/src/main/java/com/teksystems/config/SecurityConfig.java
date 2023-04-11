@@ -1,4 +1,4 @@
-package springexamples.config;
+package com.teksystems.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,7 +26,7 @@ public class SecurityConfig {
         http.csrf().disable()
                 // this line is saying anything with the URL /employee/** is going require authentication
                 // you can put any number of URLS that you want to secure here with a comma sepearting them,
-                .authorizeHttpRequests().requestMatchers("/employee/**","/product/**","/cart/**").authenticated()
+                .authorizeHttpRequests().requestMatchers("/user/**","/product/**","/cart/**").authenticated()
                 // everything else in the application is going to permitted
                 .anyRequest().permitAll()
                 .and()
@@ -42,12 +42,7 @@ public class SecurityConfig {
                 // this URL is where spring security will send the user IF they have not requested a secure URL
                 // if they have requested a secure URL spring security will ignore this and send them to the
                 // secured url they requested
-                .defaultSuccessUrl("/")
-                .and()
-                .logout()
-                .invalidateHttpSession(true)
-                .logoutUrl("/login/logout")
-                .logoutSuccessUrl("/index");
+                .defaultSuccessUrl("/");
         return http.build();
     }
 
