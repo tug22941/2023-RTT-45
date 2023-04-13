@@ -13,8 +13,9 @@ public class ProductFormBean {
     private Integer id;
     private String name;
     private String description;
-    private String imageUrl;
     private Double price;
     private String productType;
+
     private MultipartFile picture;
+    private String imageUrl;
 }
