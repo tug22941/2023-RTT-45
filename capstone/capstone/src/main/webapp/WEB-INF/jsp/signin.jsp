@@ -12,6 +12,7 @@
             id="inputEmail"
             class="form-control"
             placeholder="Email address"
+            name="username"
             required
             autofocus
           />
@@ -21,6 +22,7 @@
             id="inputPassword"
             class="form-control"
             placeholder="Password"
+            name="password"
             required
           />
           <div class="checkbox mb-3 text-center">
@@ -31,6 +33,9 @@
           <button class="btn btn-lg btn-primary btn-block" type="submit">
             Sign in
           </button>
+          <label class="d-flex justify-content-center">
+            <span>Not a member?  <a class="a" href="/signup"> Register</a></span>
+          </label>
           <p class="mt-5 mb-3 text-muted text-center">&copy; 2023 - 2024</p>
         </form>
       </div>

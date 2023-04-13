@@ -3,6 +3,7 @@ package com.teksystems.formbeans;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 @Setter
@@ -15,4 +16,6 @@ public class ProductFormBean {
     private String imageUrl;
     private Double price;
     private String productType;
+
+    //private MultipartFile picture;
 }

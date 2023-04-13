@@ -2,6 +2,8 @@ package com.teksystems.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -42,8 +44,21 @@ public class SecurityConfig {
                 // this URL is where spring security will send the user IF they have not requested a secure URL
                 // if they have requested a secure URL spring security will ignore this and send them to the
                 // secured url they requested
-                .defaultSuccessUrl("/");
+                .defaultSuccessUrl("/")
+                .and()
+                .logout()
+                .invalidateHttpSession(true)
+                .logoutUrl("/login/logout")
+                .logoutSuccessUrl("/index");
         return http.build();
+    }
+
+//    @Bean(name = "passwordEncoder")
+//    public PasswordEncoder passwordEncoder() {return new BCryptPasswordEncoder();}
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
+        return authConfig.getAuthenticationManager();
     }
 
 }

@@ -1,8 +1,10 @@
 package com.teksystems.controller;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -33,10 +35,12 @@ public class SlashController {
         return response;
     }
 
-    @RequestMapping(value = "/signin", method = RequestMethod.GET)
-    public ModelAndView signin() {
-        log.debug("In the signin controller method");
-        ModelAndView response = new ModelAndView("signin");
+    @GetMapping(value = "/login")
+    public ModelAndView login(HttpSession session) {
+        log.debug("In the login GET controller method");
+        ModelAndView response = new ModelAndView("login/login");
+
+        session.setAttribute("name", "Session set on Login");
         return response;
     }
 

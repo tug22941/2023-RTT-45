@@ -3,6 +3,7 @@ package springexamples.database.dao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import springexamples.database.entity.Employee;
+import springexamples.database.entity.User;
 
 import java.util.List;
 import java.util.Map;
@@ -42,5 +43,11 @@ public interface EmployeeDAO extends JpaRepository<Employee, Long> {
     //JPA Hibernate Query Syntax
     @Query("From Employee e where lower(e.firstName) like lower(concat('%', :firstName, '%')) or lower(e.lastName) like lower(concat('%', :lastName, '%'))")
     List<Employee> usingJPAQuery(String firstName, String lastName);
+
+
+    boolean existsByEmail(String email);
+
+    Employee findByEmail(String email);
+
 
 }

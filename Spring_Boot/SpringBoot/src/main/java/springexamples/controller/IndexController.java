@@ -15,6 +15,7 @@ import springexamples.database.dao.UserRoleDAO;
 import springexamples.database.entity.User;
 import springexamples.database.entity.UserRole;
 import springexamples.formbeans.CreateUserFormBean;
+import springexamples.security.AuthenticatedUserService;
 
 @Slf4j
 @Controller
@@ -28,6 +29,9 @@ public class IndexController {
 
     @Autowired
     private UserRoleDAO userRoleDAO;
+
+    @Autowired
+    AuthenticatedUserService authenticatedUserService;
 
     //make first message to handle incoming request
     @RequestMapping(value = {"/index","/", "/index.html"}, method = RequestMethod.GET)
@@ -56,7 +60,7 @@ public class IndexController {
         return response;
     }
     @PostMapping("/signup")
-    public ModelAndView signup(CreateUserFormBean form) {
+    public ModelAndView setup(CreateUserFormBean form, HttpSession session) {
 
         ModelAndView response = new ModelAndView("signup");
         log.debug("In the signup POST controller method");
@@ -79,6 +83,12 @@ public class IndexController {
         userRole.setUserId(user.getId());
         //user entity has an id from previous 'userDAO.save' database population
         userRoleDAO.save(userRole);
+
+        //very important that this line of code is after both the user and the user role is saved to the database
+        // authenticate the user that was just created
+        authenticatedUserService.changeLoggedInUsername(session, form.getEmail(), form.getPassword());
+
+        log.debug(form.toString());
 
         return response;
     }
