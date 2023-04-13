@@ -5,31 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a472fa08-2289-42f3-9479-231ce93eaf14" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/OrderDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/UserRoleDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/entity/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/entity/OrderProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/entity/UserRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/security/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/login/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/product/detail.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/product/search.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/user/detail.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Mod_310_2/SpringSoapDemo/src/main/java/perscholas/SpringSoapDemo/config/WebServiceConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Mod_310_2/SpringSoapDemo/src/main/java/perscholas/SpringSoapDemo/controller/RestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Mod_310_2/SpringSoapDemo/src/main/java/perscholas/SpringSoapDemo/dao/BookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Mod_310_2/SpringSoapDemo/src/main/java/perscholas/SpringSoapDemo/webservices/BookEndpoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Mod_310_2/SpringSoapDemo/src/main/resources/Book.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/springexamples/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/springexamples/security/AuthenticatedUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/springexamples/validation/EmailUnique.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/springexamples/validation/EmailUniqueImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/security/AuthenticatedUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/validation/EmailUnique.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/validation/EmailUniqueImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/database/dao/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/database/dao/EmployeeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/database/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/database/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/formbeans/CreateUserFormBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/formbeans/CreateUserFormBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/formbeans/EmployeeFormBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/formbeans/EmployeeFormBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/employee/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/employee/create.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/signup.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springexamples/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springexamples/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springexamples/controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springexamples/controller/EmployeeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springexamples/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springexamples/controller/IndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springexamples/database/dao/EmployeeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springexamples/database/dao/EmployeeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springexamples/database/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springexamples/database/dao/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springexamples/formbeans/CreateUserFormBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springexamples/formbeans/CreateUserFormBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springexamples/formbeans/EmployeeFormBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springexamples/formbeans/EmployeeFormBean.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../capstone/capstone/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/SlashController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/SlashController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/ProductDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/formbeans/ProductFormBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/formbeans/ProductFormBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/formbeans/UserFormBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/formbeans/UserFormBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/include/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/product/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/product/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/signin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/signin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/user/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/user/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/pub/css/signin.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/pub/css/signin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/pub/css/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/pub/css/signup.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +120,10 @@
       <workItem from="1681071711331" duration="5402000" />
       <workItem from="1681132188581" duration="287000" />
       <workItem from="1681132521500" duration="11883000" />
+      <workItem from="1681220734166" duration="15829000" />
+      <workItem from="1681304027312" duration="8129000" />
+      <workItem from="1681324624083" duration="650000" />
+      <workItem from="1681329810025" duration="3864000" />
     </task>
     <servers />
   </component>

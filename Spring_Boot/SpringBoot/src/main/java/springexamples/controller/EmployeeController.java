@@ -1,12 +1,16 @@
 package springexamples.controller;
 
 import io.micrometer.common.util.StringUtils;
+import jakarta.validation.Valid;
 import jakarta.websocket.server.PathParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import springexamples.database.dao.EmployeeDAO;
@@ -128,12 +132,28 @@ public class EmployeeController {
     }
 
     @PostMapping("/createSubmit")
-    public ModelAndView createSubmit(EmployeeFormBean form){
+    public ModelAndView createSubmit(@Valid EmployeeFormBean form, BindingResult bindingResult){
 
         log.debug("In employee create-SUBMIT controller method");
         log.debug(form.toString());
 
         ModelAndView response = new ModelAndView("employee/create");
+
+        List<Office> offices = officeDAO.getAllOffice();
+        response.addObject("offices",offices);
+
+        //if error found display debug notification, return to form without database upload
+        if ( bindingResult.hasErrors() ) {
+            for ( FieldError error : bindingResult.getFieldErrors()) {
+                log.debug("Validation Error on field : " + error.getField() + " with message : " + error.getDefaultMessage());
+            }
+            response.addObject("form",form);
+            response.addObject("bindingResult",bindingResult);
+            return response;
+        }
+
+        //no errors found in the incoming data
+        response.addObject("success", true);
 
         Employee emp = new Employee();
         if(form.getId() != null && form.getId() > 0){
@@ -151,6 +171,10 @@ public class EmployeeController {
         employeeDAO.save(emp);
 
         response.addObject("form",form);
+
+        //set the id of the employee of the form bean so it triggers the page to be an edit
+        //if the id is present on the form it is considered an edit
+        form.setId(emp.getId());
 
         return response;
     }

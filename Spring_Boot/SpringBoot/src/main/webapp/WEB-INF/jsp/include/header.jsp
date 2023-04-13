@@ -30,26 +30,23 @@
               <a class="nav-link active" aria-current="page" href="/index">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/signup">Signup</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/login">login</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="/bootstrap">BootStrap Ex</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/fileupload"> File Upload</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Employee
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="/employee/search">Search</a></li>
-                <li><a class="dropdown-item" href="/employee/create">Create</a></li>
-              </ul>
-            </li>
+            <sec:authorize access="hasAnyAuthority('ADMIN')">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Employee
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/employee/search">Search</a></li>
+                  <li><a class="dropdown-item" href="/employee/create">Create</a></li>
+                </ul>
+              </li>
+            </sec:authorize>
+
             <sec:authorize access="isAuthenticated()">
               <li class="nav-item">
                 <a class="nav-link" href="/login/logout">Logout</a>
@@ -59,14 +56,17 @@
               </li>
             </sec:authorize>
             <sec:authorize access="!isAuthenticated()">
-              <li class="nav-item">
-                <a class="nav-link" href="/login/loginPage">Login</a>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Login | SignUp
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/login/loginPage">LogIn</a></li>
+                  <li><a class="dropdown-item" href="/signup">SignUp</a></li>
+                </ul>
               </li>
-            </sec:authorize>
-            <sec:authorize access="hasAnyAuthority('ADMIN')">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Admin</a>
-              </li>
+
             </sec:authorize>
           </ul>
         </div>

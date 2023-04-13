@@ -1,3 +1,5 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,15 +43,11 @@
             <li class="nav-item">
               <a class="nav-link" href="/about">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/signup">Sign Up /</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/signin">Sign In</a>
-            </li>
+
+            <sec:authorize access="hasAnyAuthority('ADMIN')">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                User/Product
+                User | Product
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/user/create">Create User</a></li>
@@ -57,6 +55,22 @@
                 <li><a class="dropdown-item" href="/product/create">Create Product</a></li>
               </ul>
             </li>
+            </sec:authorize>
+
+            <sec:authorize access="isAuthenticated()">
+              <li class="nav-item">
+                <a class="nav-link" href="/login/logout">Sign Out</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href=""><sec:authentication property="principal.username" /></a>
+              </li>
+            </sec:authorize>
+            <sec:authorize access="!isAuthenticated()">
+              <li class="nav-item">
+                <a class="nav-link" href="/login/loginPage">Sign In</a>
+              </li>
+            </sec:authorize>
+
           </ul>
           <form class="d-flex" action="/product/search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" value="${search}">

@@ -24,6 +24,13 @@
 <section class="py-5">
     <div class="container f-container">
         <form id="formId" action="/user/createSubmit">
+
+            <c:if test="${success}" >
+                <div class="alert alert-success" role="alert">
+                    Form Submitted
+                </div>
+            </c:if>
+
         <input type="hidden" name="id" value="${form.id}"/>
             <c:if test="${not empty form.id}">
                 <div class="row justify-content-center">
@@ -36,24 +43,45 @@
                 <div class="mb-3 col-6 col-sm-12 col-xl-6">
                     <label for="firstName" class="form-label">First Name</label>
                     <input type="text" aria-label="User first name" id="firstName" class="form-control" name="firstName" value="${form.firstName}">
+                    <c:if test="${bindingResult.hasFieldErrors('firstName')}">
+                        <c:forEach items="${bindingResult.getFieldErrors('firstName')}" var="error">
+                            <div style="color:red;">${error.getDefaultMessage()}</div>
+                        </c:forEach>
+                    </c:if>
                 </div>
+
                 <div class="mb-3 col-6 col-sm-12 col-xl-6">
                     <label for="lastName" class="form-label">Last Name</label>
                     <input type="text" aria-label="User last name" id="lastName" class="form-control" name="lastName" value="${form.lastName}">
+                    <c:if test="${bindingResult.hasFieldErrors('lastName')}">
+                        <c:forEach items="${bindingResult.getFieldErrors('lastName')}" var="error">
+                            <div style="color:red;">${error.getDefaultMessage()}</div>
+                        </c:forEach>
+                    </c:if>
                 </div>
             </div>
 
             <div class="row justify-content-center align-items-center">
-                <div class="mb-3 col-6 col-xl-6">
+                <div class="mb-3 col-md-6 col-sm-12 col-xl-6">
                     <label for="email" class="form-label">Email address</label>
                     <input type="email" aria-label="User Email" id="email" class="form-control" name="email" value="${form.email}">
                     <div id="emailHelp" class="form-text"></div>
+                    <c:if test="${bindingResult.hasFieldErrors('email')}">
+                        <c:forEach items="${bindingResult.getFieldErrors('email')}" var="error">
+                            <div style="color:red;">${error.getDefaultMessage()}</div>
+                        </c:forEach>
+                    </c:if>
                 </div>
 
                 <div class="mb-3 col-md-6 col-sm-12 col-xl-6">
                     <label for="password" class="form-label">Password</label>
                     <input type="text" aria-label="Password" id="password" class="form-control" name="password" value="${form.password}">
                     <div id="password_help" class="form-text"></div>
+                    <c:if test="${bindingResult.hasFieldErrors('password')}">
+                        <c:forEach items="${bindingResult.getFieldErrors('password')}" var="error">
+                            <div style="color:red;">${error.getDefaultMessage()}</div>
+                        </c:forEach>
+                    </c:if>
                 </div>
             </div>
 
