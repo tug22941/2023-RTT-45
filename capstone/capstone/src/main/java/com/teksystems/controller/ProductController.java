@@ -54,9 +54,6 @@ public class ProductController {
 
         ModelAndView response = new ModelAndView("product/create");
 
-        List<Product> products = productDAO.getAllProducts();
-        response.addObject("productsList", products );
-
         Product product = new Product();
 
         if(form.getId() != null){
@@ -64,7 +61,7 @@ public class ProductController {
         }
         product.setName(form.getName());
         product.setDescription(form.getDescription());
-        //product.setImageUrl(form.ge);
+        product.setImageUrl("/pub/images/" + form.getPicture().getOriginalFilename());
         product.setPrice(form.getPrice());
         product.setProductType(form.getProductType());
 
@@ -72,13 +69,16 @@ public class ProductController {
         response.addObject("form",form);
 
         //the target location of where the incoming file is to saved
-        //File target = new File("./src/main/webapp/pub/images/" + fileUpload.getOriginalFilename());
-        //log.debug(target.getAbsolutePath());
+        File target = new File("./src/main/webapp/pub/images/" + form.getPicture().getOriginalFilename());
+        log.debug(target.getAbsolutePath());
 
         //convenience method provided by commons-io library
         //the browser offer the file to be uploaded as an input stream to the server --
         // -- this method does all the work reading the  file upload input stream, and writing it to the target filesystem
-        //FileUtils.copyInputStreamToFile(fileUpload.getInputStream(), target);
+        FileUtils.copyInputStreamToFile(form.getPicture().getInputStream(), target);
+
+        List<Product> products = productDAO.getAllProducts();
+        response.addObject("productsList", products );
 
         return response;
     }

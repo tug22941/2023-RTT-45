@@ -46,7 +46,7 @@
             <div class="row justify-content-center align-items-center">
                 <div class="mb-3 col-6 col-xl-6">
                     <label for="fileUpload" class="form-label">Image URL</label>
-                    <input type="file" class="form-control" id="fileupload" name="picutre" value="${form.imageUrl}" aria-label="Image URL">
+                    <input type="file" class="form-control" id="fileupload" name="picture" value="${form.imageUrl}" aria-label="Image URL">
                 </div>
 
                 <div class="mb-3 col-6 col-xl-6">
