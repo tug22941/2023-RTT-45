@@ -1,5 +1,4 @@
 <jsp:include page="../include/header.jsp" />
-<link rel="stylesheet" href="/pub/css/signin.css" />
 
 <link rel="stylesheet" href="/pub/css/signin.css" />
 <script type="text/javascript" src="/pub/js/signin.js"></script>
@@ -10,7 +9,7 @@
             <h1 class="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
             <label for="inputEmail" class="sr-only">Email address</label>
             <input
-                    type="email"
+                    type="text"
                     id="inputEmail"
                     class="form-control"
                     placeholder="Email address"
@@ -20,7 +19,7 @@
             />
             <label for="inputPassword" class="sr-only">Password</label>
             <input
-                    type="password"
+                    type="text"
                     id="inputPassword"
                     class="form-control"
                     placeholder="Password"

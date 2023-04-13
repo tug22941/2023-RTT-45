@@ -8,15 +8,16 @@ import com.teksystems.database.entity.Product;
 import com.teksystems.database.entity.User;
 import com.teksystems.formbeans.ProductFormBean;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.FileUtils;
 import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -46,12 +47,15 @@ public class ProductController {
         return response;
     }
 
-    @GetMapping("/createSubmit")
-    public ModelAndView createSubmit(ProductFormBean form){
+    @PostMapping("/createSubmit")
+    public ModelAndView createSubmit(ProductFormBean form) throws IOException {
         log.debug("In the Product Create-Submit controller method!");
         log.debug(form.toString());
 
         ModelAndView response = new ModelAndView("product/create");
+
+        List<Product> products = productDAO.getAllProducts();
+        response.addObject("productsList", products );
 
         Product product = new Product();
 
@@ -60,16 +64,21 @@ public class ProductController {
         }
         product.setName(form.getName());
         product.setDescription(form.getDescription());
-        product.setImageUrl(form.getImageUrl());
+        //product.setImageUrl(form.ge);
         product.setPrice(form.getPrice());
         product.setProductType(form.getProductType());
-
 
         productDAO.save(product);
         response.addObject("form",form);
 
-        List<Product> products = productDAO.getAllProducts();
-        response.addObject("productsList", products );
+        //the target location of where the incoming file is to saved
+        //File target = new File("./src/main/webapp/pub/images/" + fileUpload.getOriginalFilename());
+        //log.debug(target.getAbsolutePath());
+
+        //convenience method provided by commons-io library
+        //the browser offer the file to be uploaded as an input stream to the server --
+        // -- this method does all the work reading the  file upload input stream, and writing it to the target filesystem
+        //FileUtils.copyInputStreamToFile(fileUpload.getInputStream(), target);
 
         return response;
     }

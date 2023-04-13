@@ -53,9 +53,6 @@ public class SecurityConfig {
         return http.build();
     }
 
-//    @Bean(name = "passwordEncoder")
-//    public PasswordEncoder passwordEncoder() {return new BCryptPasswordEncoder();}
-
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
         return authConfig.getAuthenticationManager();

@@ -12,12 +12,13 @@ public interface UserDAO  extends JpaRepository<User, Long> {
     @Query("From User u")
     List<User> getAllUsers();
 
+    User findByEmail(String email);
+
     //get user by id - JPA hibernate
     @Query("From User u where u.id = :id")
     User findById(Integer id);
 
-    boolean existsByEmail(String email);
 
-    User findByEmail(String email);
+    boolean existsByEmail(String email);
 
 }
