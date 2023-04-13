@@ -23,7 +23,7 @@
 
 <section class="py-5">
     <div class="container f-container">
-        <form id="formId" action="/product/createSubmit">
+        <form id="formId" action="/product/createSubmit" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="id" value="${form.id}"/>
             <c:if test="${not empty form.id}">
                 <div class="row justify-content-center">
@@ -45,21 +45,21 @@
 
             <div class="row justify-content-center align-items-center">
                 <div class="mb-3 col-6 col-xl-6">
-                    <label for="imageUrl" class="form-label">Image URL</label>
-                    <input type="text" aria-label="Image URL" id="imageUrl" class="form-control" name="imageUrl" value="${form.imageUrl}">
+                    <label for="fileUpload" class="form-label">Image URL</label>
+                    <input type="file" class="form-control" id="fileupload" name="picutre" value="${form.imageUrl}" aria-label="Image URL">
                 </div>
 
-                <div class="mb-3 col-md-6 col-sm-12 col-xl-6">
-                    <label for="price" class="form-label">Price</label>
-                    <input type="text" aria-label="Product Price" id="price" class="form-control" name="price" value="${form.price}">
-                    <div id="password_help" class="form-text"></div>
+                <div class="mb-3 col-6 col-xl-6">
+                    <label for="productType" class="form-label">Product Type</label>
+                    <input type="text" aria-label="Image URL" id="productType" class="form-control" name="productType" value="${form.productType}">
                 </div>
             </div>
 
             <div class="row justify-content-center align-items-center">
-                <div class="mb-3 col-6 col-xl-6">
-                    <label for="productType" class="form-label">Product Type</label>
-                    <input type="text" aria-label="Image URL" id="productType" class="form-control" name="productType" value="${form.productType}">
+                <div class="mb-3 col-md-6 col-sm-12 col-xl-6">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="text" aria-label="Product Price" id="price" class="form-control" name="price" value="${form.price}">
+                    <div id="password_help" class="form-text"></div>
                 </div>
             </div>
 
@@ -82,27 +82,26 @@
 <section class="py-5">
     <div class="container text-center">
 
-        <h4 class="pb-4">${productsList.size()} Search Results </h4>
+        <h4 class="pb-4">Product Table: ${productsList.size()} Search Results </h4>
 
         <table class="table table-striped">
             <thead>
-            <tr>
-                <th scope="col">Product Name</th>
+            <tr>-
+                <th scope="col">Name</th>
                 <th scope="col">Description</th>
                 <th scope="col">Image URL</th>
+                <th scope="col">Type</th>
                 <th scope="col">Price</th>
-                <th scope="col">Product Type</th>
             </tr>
             </thead>
             <tbody>
             <c:forEach items="${productsList}" var="product">
                 <tr>
-                    <td>${product.id}</td>
                     <td>${product.name}</td>
                     <td>${product.description}</td>
                     <td>${product.imageUrl}</td>
-                    <td>${product.price}</td>
                     <td>${product.productType}</td>
+                    <td>${product.price}</td>
                     <td><a href="/product/edit/${product.id}">Edit</a></td>
                 </tr>
             </c:forEach>

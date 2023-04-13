@@ -16,6 +16,5 @@ public class ProductFormBean {
     private String imageUrl;
     private Double price;
     private String productType;
-
-    //private MultipartFile picture;
+    private MultipartFile picture;
 }
