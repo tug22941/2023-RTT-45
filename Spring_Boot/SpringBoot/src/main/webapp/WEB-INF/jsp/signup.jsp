@@ -14,6 +14,7 @@
     </div>
 </section>
 
+
 <section class="pt-5 pb-5">
     <div class="container">
         <div class="row justify-content-center">
@@ -29,7 +30,7 @@
                     <div class="mb-3">
                         <label for="exampleInputEmail1"class="form-label">* Email address</label>
                         <input type="text" placeholder="Email address" name="email"  class="form-control" id="exampleInputEmail1"
-                               aria-describedby="emailHelp">
+                               aria-describedby="emailHelp" value="${form.email}">
                         <c:if test="${bindingResult.hasFieldErrors('email')}">
                             <c:forEach items="${bindingResult.getFieldErrors('email')}" var="error">
                                 <div style="color:red;">${error.getDefaultMessage()}</div>
@@ -37,8 +38,8 @@
                         </c:if>
                     </div>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" name="fullName" id="name" aria-describedby="nameHelp">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" name="fullName" id="fullName" aria-describedby="nameHelp" value="${form.fullName}">
                         <c:if test="${bindingResult.hasFieldErrors('fullName')}">
                             <c:forEach items="${bindingResult.getFieldErrors('fullName')}" var="error">
                                 <div style="color:red;">${error.getDefaultMessage()}</div>
@@ -47,7 +48,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" name="password" id="password" aria-describedby="passwordHelp">
+                        <input type="password" class="form-control" name="password" id="password" aria-describedby="passwordHelp" value="${form.password}">
                         <c:if test="${bindingResult.hasFieldErrors('password')}">
                             <c:forEach items="${bindingResult.getFieldErrors('password')}" var="error">
                                 <div style="color:red;">${error.getDefaultMessage()}</div>
@@ -57,7 +58,7 @@
                     <div class="mb-3">
                         <label for="confirmPassword" class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"
-                               aria-describedby="confirmPasswordHelp">
+                               aria-describedby="confirmPasswordHelp" value="${form.confirmPassword}">
                         <c:if test="${bindingResult.hasFieldErrors('confirmPassword')}">
                             <c:forEach items="${bindingResult.getFieldErrors('confirmPassword')}" var="error">
                                 <div style="color:red;">${error.getDefaultMessage()}</div>
