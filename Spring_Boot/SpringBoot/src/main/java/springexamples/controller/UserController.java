@@ -3,6 +3,7 @@ package springexamples.controller;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -34,15 +35,22 @@ public class UserController {
     @PostMapping("/signupSubmit")
     public ModelAndView setup(HttpSession session, @Valid CreateUserFormBean form,
                               BindingResult bindingResult) {
+
+        ModelAndView response = new ModelAndView("signup");
         log.debug("In the User Signup - Submit controller method!");
         log.debug(form.toString());
 
-        ModelAndView response = new ModelAndView("signup");
+        response.addObject("form", form);
+
+        if (StringUtils.equals(form.getPassword(), form.getConfirmPassword()) == false){
+            bindingResult.rejectValue("confirmPassword", "error.confirmPassword", "Passwords do not match");
+        }
 
         //if error found display debug notification, return to form without database upload
         if ( bindingResult.hasErrors() ) {
             for ( FieldError error : bindingResult.getFieldErrors()) {
-                log.debug("Validation Error on field : " + error.getField() + " with message : " + error.getDefaultMessage());
+                log.debug("Validation Error on field: " + error.getField());
+                log.debug("Validation Error Message: " + error.getDefaultMessage());
             }
             response.addObject("form",form);
             response.addObject("bindingResult",bindingResult);

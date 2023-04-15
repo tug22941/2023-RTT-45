@@ -1,10 +1,14 @@
 package springexamples.controller;
 
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -60,7 +64,7 @@ public class IndexController {
         return response;
     }
     @PostMapping("/signup")
-    public ModelAndView setup(CreateUserFormBean form, HttpSession session) {
+    public ModelAndView setup(CreateUserFormBean form, BindingResult bindingResult, HttpSession session) {
 
         ModelAndView response = new ModelAndView("signup");
         log.debug("In the signup POST controller method");

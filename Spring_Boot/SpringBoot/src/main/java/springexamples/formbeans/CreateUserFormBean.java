@@ -21,12 +21,13 @@ public class CreateUserFormBean {
     @EmailUnique
     private String email;
 
-    @NotEmpty(message = "Password is required")
-    private String password;
 
     @NotEmpty(message = "Full Name is required")
     @Length(min=2, message="Full Name can not be shorter than 2 characters")
     private String fullName;
+
+    @NotEmpty(message = "Password is required")
+    private String password;
 
     @NotEmpty(message = "Confirm Password is required")
     private String confirmPassword;
