@@ -34,6 +34,11 @@
             <button class="btn btn-lg btn-primary btn-block" type="submit">
                 Sign in
             </button>
+            <div class="mt-3 text-center">
+                <label>
+                    <span>Not a member? </span ><a class="a" href="../signup">Register</a>
+                </label>
+            </div>
             <p class="mt-5 mb-3 text-muted text-center">&copy; 2023 - 2024</p>
         </form>
     </div>

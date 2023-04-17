@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0843fe6d-e732-44ae-98ae-f26011f74bd9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/OrderProductDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/formbeans/OrderProductFormBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/search.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/springexamples/formbeans/CreateUserFormBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/springexamples/formbeans/CreateUserFormBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/signup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springexamples/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springexamples/controller/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/springexamples/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springexamples/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/SlashController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/SlashController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/include/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/login/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/product/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/product/detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/product/search.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,26 +38,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/2023-RTT-45/Spring_Boot/SpringBoot",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "c8428a45869e78fb361ed20b9c23b0a8",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/2023-RTT-45/Spring_Boot/SpringBoot&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;c8428a45869e78fb361ed20b9c23b0a8&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="SpringBoot" />
@@ -78,6 +81,7 @@
       <workItem from="1681421333887" duration="15000" />
       <workItem from="1681425923467" duration="691000" />
       <workItem from="1681480611281" duration="5435000" />
+      <workItem from="1681666028162" duration="9987000" />
     </task>
     <servers />
   </component>

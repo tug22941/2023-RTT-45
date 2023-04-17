@@ -1,18 +1,27 @@
 package com.teksystems.controller;
 
+import com.teksystems.database.dao.ProductDAO;
+import com.teksystems.database.entity.Product;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Slf4j
 @Controller
 public class SlashController {
 
+    @Autowired
+    ProductDAO productDAO;
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public ModelAndView index() {
@@ -41,6 +50,18 @@ public class SlashController {
         ModelAndView response = new ModelAndView("login/login");
 
         session.setAttribute("name", "Session set on Login");
+        return response;
+    }
+    @GetMapping("/search")
+    public ModelAndView search(@RequestParam(required = false) String search){
+        log.info("In the Product Search controller method!");
+        ModelAndView response = new ModelAndView("search");
+
+        List<Product> products = new ArrayList<>();
+        products = productDAO.findProductsBySearch(search);
+
+        response.addObject("productsList",products);
+        response.addObject("search",search);
         return response;
     }
 
