@@ -72,7 +72,7 @@
             </sec:authorize>
 
           </ul>
-          <form class="d-flex" action="/product/search">
+          <form class="d-flex" action="/search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" value="${search}">
             <button class="btn btn-outline-success">Search</button>
           </form>
