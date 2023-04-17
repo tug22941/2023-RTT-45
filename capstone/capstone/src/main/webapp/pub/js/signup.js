@@ -164,7 +164,8 @@ $( document ).ready(function() {
 
       //check for all valid input
       if (allValid) {
-        console.log("All Valid!");
+        document.getElementById("formId").submit();
+        console.log("submitted");
       }
     });
 });
