@@ -31,7 +31,7 @@ public class UserFormBean {
 
     @NotEmpty(message = "Password is required")
     @Length(max=20, message="Password can not be longer than 20 characters")
-    @Length(min=2, message="Password can not be shorter than 2 characters")
+    @Length(min=3, message="Password can not be shorter than 3 characters")
     private String password;
 
     @NotEmpty(message = "Password is required")

@@ -1,4 +1,9 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<script>
+    function toDetails(){
+        location.href="/product/detail/${form.id}";
+    }
+</script>
 
 <jsp:include page="../include/header.jsp" />
 
@@ -15,11 +20,11 @@
     </div>
 </section>
 
-<script>
-    function toDetails(){
-        location.href="/product/detail/${form.id}";
-    }
-</script>
+<c:if test="${success}" >
+    <div class="alert alert-success text-center" role="alert">
+        Sign Up Completed!
+    </div>
+</c:if>
 
 <section class="py-5">
     <div class="container f-container">
@@ -36,10 +41,20 @@
                 <div class="mb-3 col-6 col-sm-12 col-xl-6">
                     <label for="name" class="form-label">Product Name</label>
                     <input type="text" aria-label="Product name" id="name" class="form-control" name="name" value="${form.name}">
+                    <c:if test="${bindingResult.hasFieldErrors('name')}">
+                        <c:forEach items="${bindingResult.getFieldErrors('name')}" var="error">
+                            <div style="color:red;">${error.getDefaultMessage()}</div>
+                        </c:forEach>
+                    </c:if>
                 </div>
                 <div class="mb-3 col-6 col-sm-12 col-xl-6">
                     <label for="description" class="form-label">Description</label>
                     <input type="text" aria-label="Product description" id="description" class="form-control" name="description" value="${form.description}">
+                    <c:if test="${bindingResult.hasFieldErrors('description')}">
+                        <c:forEach items="${bindingResult.getFieldErrors('description')}" var="error">
+                            <div style="color:red;">${error.getDefaultMessage()}</div>
+                        </c:forEach>
+                    </c:if>
                 </div>
             </div>
 
@@ -47,11 +62,21 @@
                 <div class="mb-3 col-6 col-xl-6">
                     <label for="fileUpload" class="form-label">Image URL</label>
                     <input type="file" class="form-control" id="fileupload" name="picture" value="${form.imageUrl}" aria-label="Image URL">
+                    <c:if test="${bindingResult.hasFieldErrors('picture')}">
+                        <c:forEach items="${bindingResult.getFieldErrors('picture')}" var="error">
+                            <div style="color:red;">${error.getDefaultMessage()}</div>
+                        </c:forEach>
+                    </c:if>
                 </div>
 
                 <div class="mb-3 col-6 col-xl-6">
                     <label for="productType" class="form-label">Product Type</label>
                     <input type="text" aria-label="Image URL" id="productType" class="form-control" name="productType" value="${form.productType}">
+                    <c:if test="${bindingResult.hasFieldErrors('productType')}">
+                        <c:forEach items="${bindingResult.getFieldErrors('productType')}" var="error">
+                            <div style="color:red;">${error.getDefaultMessage()}</div>
+                        </c:forEach>
+                    </c:if>
                 </div>
             </div>
 
@@ -59,7 +84,11 @@
                 <div class="mb-3 col-md-6 col-sm-12 col-xl-6">
                     <label for="price" class="form-label">Price</label>
                     <input type="text" aria-label="Product Price" id="price" class="form-control" name="price" value="${form.price}">
-                    <div id="password_help" class="form-text"></div>
+                    <c:if test="${bindingResult.hasFieldErrors('price')}">
+                        <c:forEach items="${bindingResult.getFieldErrors('price')}" var="error">
+                            <div style="color:red;">${error.getDefaultMessage()}</div>
+                        </c:forEach>
+                    </c:if>
                 </div>
             </div>
 
