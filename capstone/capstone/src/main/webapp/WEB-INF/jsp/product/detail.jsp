@@ -59,7 +59,7 @@
                 <td>Image</td>
                 <td><img src="${product.imageUrl}" class="w-50"/></td>
             </tr>
-            <form action="/product/addToCart/${product.id}">
+            <form action="/order/addToCart/${product.id}">
             <tr>
                 <td>Quantity</td>
                 <td>

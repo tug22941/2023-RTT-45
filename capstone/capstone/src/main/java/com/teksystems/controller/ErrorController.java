@@ -11,13 +11,18 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
 
+//controller class responsible for formatting and displaying runtime errors
 @Slf4j
 @Controller
 @ControllerAdvice
 public class ErrorController {
 
+    //method responsible for running the exception handling process
     @ExceptionHandler(Exception.class)
     public ModelAndView handleAllException(HttpServletRequest request, Exception ex) {
+
+        log.debug("In the HANDLE ALL EXCEPTION controller method:");
+
         String requestUrl = getRequestURL(request);
         log.warn("Error page exception happened on URL : " + requestUrl, ex);
 
@@ -27,8 +32,8 @@ public class ErrorController {
 
         String stackTrace = getHTMLStackTrace(ExceptionUtils.getStackFrames(ex));
 
-        // message is the request URL if it was an error page, otherwise it can be a message
-        // from the class that calls it
+        // display error message as the request URL if it was an error page
+        // otherwise display error message from the calling class
         model.addObject("requestUrl", requestUrl);
         model.addObject("message", ex.getMessage());
         model.addObject("stackTrace", stackTrace);
@@ -39,10 +44,11 @@ public class ErrorController {
             String roottrace = getHTMLStackTrace(ExceptionUtils.getRootCauseStackTrace(ex));
             model.addObject("roottrace", roottrace);
         }
-
+        log.debug("");
         return model;
     }
 
+    //method responsible for getting the HTML stack trace
     private String getHTMLStackTrace(String[] stack) {
         StringBuffer result = new StringBuffer();
         for (String frame : stack) {
@@ -53,10 +59,10 @@ public class ErrorController {
                 result.append("Caused By:<br>");
             }
         }
-
         return result.toString();
     }
 
+    //method responsible for getting the requested URL that produced an error
     public String getRequestURL(HttpServletRequest request) {
         String result = request.getRequestURL().toString();
         if (request.getQueryString() != null) {

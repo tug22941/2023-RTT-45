@@ -60,7 +60,7 @@
                 </div>
             </div>
 
-            <div class="row justify-content-center align-items-center">
+            <div class="row align-items-center">
                 <div class="mb-3 col-md-6 col-sm-12 col-xl-6">
                     <label for="email" class="form-label">Email address</label>
                     <input type="email" aria-label="User Email" id="email" class="form-control" name="email" value="${form.email}">
@@ -71,13 +71,26 @@
                         </c:forEach>
                     </c:if>
                 </div>
+            </div>
 
+            <div class="row justify-content-center align-items-center">
                 <div class="mb-3 col-md-6 col-sm-12 col-xl-6">
                     <label for="password" class="form-label">Password</label>
                     <input type="text" aria-label="Password" id="password" class="form-control" name="password" value="${form.password}">
                     <div id="password_help" class="form-text"></div>
                     <c:if test="${bindingResult.hasFieldErrors('password')}">
                         <c:forEach items="${bindingResult.getFieldErrors('password')}" var="error">
+                            <div style="color:red;">${error.getDefaultMessage()}</div>
+                        </c:forEach>
+                    </c:if>
+                </div>
+
+                <div class="mb-3 col-md-6 col-sm-12 col-xl-6">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="text" aria-label="confirmPassword" id="confirmPassword" class="form-control" name="confirmPassword" value="${form.confirmPassword}">
+                    <div id="ConfirmPassword_help" class="form-text"></div>
+                    <c:if test="${bindingResult.hasFieldErrors('confirmPassword')}">
+                        <c:forEach items="${bindingResult.getFieldErrors('confirmPassword')}" var="error">
                             <div style="color:red;">${error.getDefaultMessage()}</div>
                         </c:forEach>
                     </c:if>

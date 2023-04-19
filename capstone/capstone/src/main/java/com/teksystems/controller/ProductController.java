@@ -26,16 +26,15 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
+//controller class responsible for handling product actions
 @Slf4j
 @Controller
 @RequestMapping("/product")
 public class ProductController {
 
+    //----------Autowire Necessary DAOs--------------//
     @Autowired
     private ProductDAO productDAO;
-
-    @Autowired
-    private UserDAO userDAO;
 
     @Autowired
     private OrderDAO orderDAO;
@@ -45,64 +44,120 @@ public class ProductController {
 
     @Autowired
     AuthenticatedUserService authenticatedUserService;
+    //---
 
+    //method responsible for displaying the create product page: with a list of products
     @GetMapping("/create")
     public ModelAndView create(){
-        log.debug("In the Product Create controller method!");
 
+        log.debug("In the product CREATE controller method:");
         ModelAndView response = new ModelAndView("product/create");
+
+        //load list of all products : and add products object to the response object
         List<Product> products = productDAO.getAllProducts();
         response.addObject("productsList", products );
 
+        log.debug("");
         return response;
     }
 
+    //method responsible for validating product creation form: creating a new product: and displaying updated products list
     @PostMapping("/createSubmit")
-    public ModelAndView createSubmit(ProductFormBean form) throws IOException {
-        log.debug("In the Product Create-Submit controller method!");
-        log.debug(form.toString());
+    public ModelAndView createSubmit(@Valid ProductFormBean form,
+                                     BindingResult bindingResult) throws IOException {
 
+        log.debug("In the product CREATE SUBMIT controller method:");
+        log.debug(form.toString());
         ModelAndView response = new ModelAndView("product/create");
 
+        //--------- 1: VALIDATE PRODUCT CREATION FORM --------------//
+
+        //check for errors in the product form 'binding results'
+        //if error(s) found, log error: add form and binding result objects to response object: return response
+        if ( bindingResult.hasErrors() ) {
+            for ( FieldError error : bindingResult.getFieldErrors()) {
+                log.debug("Validation Error on field: " + error.getField());
+                log.debug("Validation Error Message: " + error.getDefaultMessage());
+            }
+            response.addObject("form",form);
+            response.addObject("bindingResult",bindingResult);
+
+            //load list of all products : and add products object to the response object
+            List<Product> products = productDAO.getAllProducts();
+            response.addObject("productsList", products );
+
+            return response;
+        }else{
+            //if error(s) not found: add success boolean to response object
+            response.addObject("success", true);
+        }
+
+        //--------- 2: CREATE NEW PRODUCT -(OR)- EDIT EXISTING PRODUCT  --------------//
+
+        //create new product object
         Product product = new Product();
 
+        //if product form has product id: PROCESS BECOMES EDIT EXISTING PRODUCT
+        // assign product matching that id to new object
         if(form.getId() != null){
             product = productDAO.findById(form.getId());
         }
+
+        // set form 'ImageUrl' value to Image folder relative location
+        String imageUrl = "/pub/images/" + form.getPicture().getOriginalFilename();
+        form.setImageUrl(imageUrl);
+
+        //set product properties to form values
         product.setName(form.getName());
         product.setDescription(form.getDescription());
-        product.setImageUrl("/pub/images/" + form.getPicture().getOriginalFilename());
+        product.setImageUrl(imageUrl);
         product.setPrice(form.getPrice());
         product.setProductType(form.getProductType());
 
+        //save created product into database: add form object to response object
         productDAO.save(product);
         response.addObject("form",form);
 
-        //the target location of where the incoming file is to saved
-        File target = new File("./src/main/webapp/pub/images/" + form.getPicture().getOriginalFilename());
+        //target the save location of the form's 'picture' file to the images folder
+        File target = new File("./src/main/webapp"+imageUrl);
         log.debug(target.getAbsolutePath());
 
-        //convenience method provided by commons-io library
-        //the browser offer the file to be uploaded as an input stream to the server --
-        // -- this method does all the work reading the  file upload input stream, and writing it to the target filesystem
+        //use the convenience method provided by commons-io library
+        //read the file upload input stream : and write it to the target filesystem
         FileUtils.copyInputStreamToFile(form.getPicture().getInputStream(), target);
 
+        //--------- 3: DISPLAY UPDATED PRODUCT LIST  --------------//
+
+        //load list of all products : and add products object to the response object
         List<Product> products = productDAO.getAllProducts();
         response.addObject("productsList", products );
 
+        log.debug("");
         return response;
     }
 
+    //method responsible for displaying the edit form of an existing product : and displaying products list
     @GetMapping("/edit/{id}")
     public ModelAndView edit(@PathVariable Integer id){
 
-        log.debug("In Product edit controller method");
+        log.debug("In EDIT controller method:");
         ModelAndView response = new ModelAndView("product/create");
 
-        Product product = productDAO.findById(id);
-        ProductFormBean form = new ProductFormBean();
+        //--------- 1: DISPLAY PRODUCTS LIST  --------------//
 
-        //set the product form fields: to be added to the model and returned to the view
+        //load list of all products : and add products object to the response object
+        List<Product> products = productDAO.getAllProducts();
+        response.addObject("productsList", products );
+
+
+        //--------- 2: SET THE FORM FIELD VALUES  --------------//
+
+        //create new product object : assign value of product with 'id' to product object
+        Product product = productDAO.findById(id);
+
+        //create new product form bean
+        ProductFormBean form = new ProductFormBean();
+        // set the product form properties: add product object to response object
         form.setId(product.getId());
         form.setName(product.getName());
         form.setDescription((product.getDescription()));
@@ -111,18 +166,18 @@ public class ProductController {
         form.setProductType(product.getProductType());
         response.addObject("form",form);
 
-        List<Product> products = productDAO.getAllProducts();
-        response.addObject("productsList", products );
-
+        log.debug("");
         return response;
     }
 
+    //method responsible for displaying product information
     @GetMapping("/detail/{id}")
     public ModelAndView detail(@PathVariable Integer id){
-        log.debug("In the Product Detail controller method!");
+
+        log.debug("In the product DETAIL controller method:");
         ModelAndView response = new ModelAndView("product/detail");
 
-        //load product: return product to the page to load the product detail information
+        //load product matching id: assign product to new product object: add product object to response object
         Product product = productDAO.findById(id);
         response.addObject("product",product);
 
@@ -130,115 +185,23 @@ public class ProductController {
         User user = authenticatedUserService.loadCurrentUser();
         log.debug("Current User:" + user.getEmail());
 
-        // if user has an open order: load that order and return it to the page
+        // if user has an open order: assign open order to order object: add order object to response object
         Order order = new Order();
         if(orderDAO.findOpenOrder(user.getId()) != null){
             order = orderDAO.findOpenOrder(user.getId());
             response.addObject("orderId", order.getId());
         }
 
-        // check if there is already a product matching our product ID in the order-product
-        // that belongs to our current order ID
+        // check for order-product record with matching product id and order id
         OrderProduct orderProduct = orderProductDAO.findOrderProductById(order.getId(), id);
 
-        //if there is a matching record found: return the quantity to the page
+        //if matching record found: add record's 'quantity' field-value to response object
         if(orderProduct != null){
             log.debug("Order Product found - ID: " + orderProduct.getId());
             response.addObject("quantity", orderProduct.getQuantity());
         }
 
-
-
-        log.debug(product + "");
-        return response;
-    }
-
-    @GetMapping("/addToCart/{id}")
-    public ModelAndView addToCart(@PathVariable Integer id,
-                                  @RequestParam(required = false) Integer orderId,
-                                  @RequestParam(required = false) Integer quantity,
-                                  @Valid OrderProductFormBean form,
-                                  BindingResult bindingResult){
-        log.info("In the Product Add To Cart controller method!");
-        ModelAndView response = new ModelAndView("product/detail");
-
-        //return quantity input to page
-        response.addObject("quantity", quantity);
-
-        //return product to load the product detail information
-        Product product = productDAO.findById(id);
-        response.addObject("product",product);
-
-        //error check that quantity value is within range
-        //if error found display debug notification, return to form without database upload
-        if ( bindingResult.hasErrors() ) {
-            for ( FieldError error : bindingResult.getFieldErrors()) {
-                log.debug("Validation Error on field: " + error.getField());
-                log.debug("Validation Error Message: " + error.getDefaultMessage());
-            }
-            response.addObject("form",form);
-            response.addObject("bindingResult",bindingResult);
-            return response;
-        }
-
-        //1) LOAD USER from authenticated user service
-        User user = authenticatedUserService.loadCurrentUser();
-        log.debug("Current User:" + user.getEmail());
-
-        //2) SET OR LOAD ORDER
-        Order order = new Order();
-
-        //if order ID is already loaded in: return that order to the page
-        if(orderId != null){
-            order = orderDAO.findById(orderId);
-            response.addObject("orderId", orderId);
-        // if user has an open order: load that order and return it to the page
-        }else if(orderDAO.findOpenOrder(user.getId()) != null){
-            order = orderDAO.findOpenOrder(user.getId());
-            response.addObject("orderId", order.getId());
-        }
-        //if user does not have a preloaded or open order: create a new order and return it to the page
-        else {
-            order.setUser(user);
-
-            Date now = new Date();
-            order.setOrderDate(now);
-
-            order.setOrderStatus("Open");
-            order.setCardNumber("1110444055507770");
-            order.setCity("Philadelphia");
-            order.setState("PA");
-            order.setZipcode("19121");
-            order.setAddressLine1("1001 Broad St");
-            orderDAO.save(order);
-            response.addObject("orderId", order.getId());
-
-        }
-
-        //3) SET OR LOAD PRODUCT IN THE ORDER (ORDER-PRODUCTS)
-
-        // check if there is already a product matching our product ID in the order-product
-        // that belongs to our current order ID
-        OrderProduct orderProduct = orderProductDAO.findOrderProductById(order.getId(), id);
-
-        //if there is a matching record found: update record product quantity with form quantity
-        if(orderProduct != null){
-            log.debug("Order Product found - ID: " + orderProduct.getId());
-            orderProduct.setQuantity(form.getQuantity());
-        }
-        //if there is not a matching record found: create a new record with product quantity set to form quantity
-        else{
-            log.debug("no Order Product found");
-            orderProduct.setOrder(order);
-            orderProduct.setProduct(product);
-            orderProduct.setQuantity(quantity);
-        }
-        orderProductDAO.save(orderProduct);
-
-        log.debug("Order #: " + order.getId());
-        log.debug("Product #: " + id);
-        log.debug(" Input Quantity #: " + quantity + "\n");
-
+        log.debug("");
         return response;
     }
 

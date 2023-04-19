@@ -1,7 +1,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<jsp:include page="include/header.jsp" />
-<link rel="stylesheet" href="/pub/css/signup.css" />
 <script type="text/javascript" src="/pub/js/signup.js"></script>
+
+<jsp:include page="../include/header.jsp" />
+<link rel="stylesheet" href="/pub/css/signup.css" />
 
 <!-- Content Header-->
     <section class="py-3">
@@ -13,10 +14,10 @@
   <!-- Content -->
     <section class="py-2">
         <div class="container f-container">
-            <form id="formId" action="/signupSubmit" method="POST">
+            <form id="formId" action="/login/signupSubmit" method="POST">
 
                 <c:if test="${success}" >
-                    <div class="alert alert-success" role="alert">
+                    <div class="alert alert-success text-center" role="alert">
                         Sign Up Completed!
                     </div>
                 </c:if>
@@ -95,4 +96,4 @@
         </div>
     </section>
 
-<jsp:include page="include/footer.jsp" />
+<jsp:include page="../include/footer.jsp" />

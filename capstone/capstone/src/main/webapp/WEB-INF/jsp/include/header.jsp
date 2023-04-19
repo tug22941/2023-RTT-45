@@ -1,5 +1,6 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,7 +37,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-80">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/index">Home</a>
             </li>
@@ -65,12 +66,21 @@
                 <a class="nav-link" href=""><sec:authentication property="principal.username" /></a>
               </li>
             </sec:authorize>
+
             <sec:authorize access="!isAuthenticated()">
               <li class="nav-item">
                 <a class="nav-link" href="/login/loginPage">Sign In</a>
               </li>
             </sec:authorize>
 
+            <sec:authorize access="isAuthenticated()">
+              <li class="nav-item d-flex justify-content-end cart-link">
+                <a class="nav-link text-end cart-a" href="/order/cart">
+                  <img src="../../../pub/images/cart.png" class="cart-img">
+                  <span>Cart</span>
+                </a>
+              </li>
+            </sec:authorize>
           </ul>
           <form class="d-flex" action="/search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" value="${search}">
