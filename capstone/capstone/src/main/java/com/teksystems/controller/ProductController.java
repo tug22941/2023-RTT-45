@@ -183,7 +183,6 @@ public class ProductController {
 
         //load user from authenticated user service
         User user = authenticatedUserService.loadCurrentUser();
-        log.debug("Current User:" + user.getEmail());
 
         // if user has an open order: assign open order to order object: add order object to response object
         Order order = new Order();
@@ -204,5 +203,6 @@ public class ProductController {
         log.debug("");
         return response;
     }
+
 
 }

@@ -5,6 +5,9 @@ import com.teksystems.database.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.List;
+import java.util.Map;
+
 public interface OrderProductDAO extends JpaRepository<OrderProduct, Long> {
 
     //get product in order
@@ -15,5 +18,13 @@ public interface OrderProductDAO extends JpaRepository<OrderProduct, Long> {
             "\tand op.product_id = :productId\n" +
             "group by op.id;", nativeQuery = true)
     OrderProduct findOrderProductById(Integer orderId, Integer productId);
+
+    @Query(value="select *\n" +
+            "from orders o, order_products op, products p\n" +
+            "where\n" +
+            "\to.id = :id and\n" +
+            "\to.id = op.order_id and \n" +
+            "    op.product_id = p.id;", nativeQuery = true)
+    List<Map<String,Object>> findById(Integer id);
 
 }

@@ -6,10 +6,10 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-@Entity
-@Table(name = "user_roles")
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
+@Table(name = "user_roles")
 public class UserRole {
 
     //field attributes, with mapping
