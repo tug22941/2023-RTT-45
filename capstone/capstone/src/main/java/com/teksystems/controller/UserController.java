@@ -1,9 +1,13 @@
 package com.teksystems.controller;
 
 import com.teksystems.database.dao.UserDAO;
+import com.teksystems.database.dao.UserRoleDAO;
+import com.teksystems.database.entity.Product;
 import com.teksystems.database.entity.User;
+import com.teksystems.database.entity.UserRole;
 import com.teksystems.formbeans.UserFormBean;
 import com.teksystems.security.AuthenticatedUserService;
+import jakarta.persistence.EntityManager;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -36,15 +40,20 @@ public class UserController {
     private PasswordEncoder passwordEncoder;
 
     @Autowired
+    private UserRoleDAO userRoleDAO;
+
+    @Autowired
     private UserDAO userDAO;
     //---
 
     //method responsible for displaying the create user page: with a list of users
     @GetMapping("/create")
     public ModelAndView create(){
-        log.debug("In the user CREATE controller method:");
 
+        log.debug("In the user CREATE controller method:");
         ModelAndView response = new ModelAndView("user/create");
+
+        //load list of all users : and add user object to the response object
         List<User> users = userDAO.getAllUsers();
         response.addObject("usersList", users );
 
@@ -160,10 +169,33 @@ public class UserController {
     @GetMapping("/detail/{id}")
     public ModelAndView detail(@PathVariable Integer id){
         log.debug("In the user DETAIL controller method:");
-
         ModelAndView response = new ModelAndView("user/detail");
+
         User user = userDAO.findById(id);
         response.addObject("user",user);
+
+        log.debug("");
+        return response;
+    }
+
+    //method responsible for deleting user record: and displaying updated user list
+    @GetMapping("/delete/{id}")
+    public ModelAndView delete(@PathVariable Integer id){
+
+        log.debug("In the user DELETE controller method:");
+        ModelAndView response = new ModelAndView("user/create");
+
+        List<UserRole> userRoles = userRoleDAO.findByUserId(id);
+        UserRole userRole = userRoles.get(0);
+        //use persistent entity manager object 'remove' method to delete userRole object;
+
+        User user = userDAO.findById(id);
+        //use persistent entity manager object 'remove' method to delete user object;
+
+
+        //load list of all users : and add user object to the response object
+        List<User> users = userDAO.getAllUsers();
+        response.addObject("usersList", users );
 
         log.debug("");
         return response;

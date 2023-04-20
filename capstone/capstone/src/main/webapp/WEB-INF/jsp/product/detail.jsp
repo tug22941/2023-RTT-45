@@ -30,12 +30,10 @@
             <tr>
                 <td>Edit Product</td>
                 <td>
-                    <button type="button" class="btn btn-sm btn-danger" onclick="toEdits()">Edit Product Details</button>
-                </td>
+                 </td>
             </tr>
-            <tr>
             </sec:authorize>
-
+            <tr>
                 <td>ID #</td>
                 <td>${product.id}</td>
             </tr>
