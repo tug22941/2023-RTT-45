@@ -19,12 +19,15 @@ public interface OrderProductDAO extends JpaRepository<OrderProduct, Long> {
             "group by op.id;", nativeQuery = true)
     OrderProduct findOrderProductById(Integer orderId, Integer productId);
 
-    @Query(value="select *\n" +
+    @Query(value="select p.id as \"product_id\", p.name, p.image_url, p.price, \n" +
+            "op.id as \"order_products_id\", op.quantity\n" +
             "from orders o, order_products op, products p\n" +
             "where\n" +
             "\to.id = :id and\n" +
             "\to.id = op.order_id and \n" +
             "    op.product_id = p.id;", nativeQuery = true)
-    List<Map<String,Object>> findById(Integer id);
+    List<Map<String,Object>> findByCartByOrderId(Integer id);
+
+    OrderProduct findById(Integer id);
 
 }
