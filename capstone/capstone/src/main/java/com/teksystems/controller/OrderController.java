@@ -66,14 +66,13 @@ public class OrderController {
             return response;
         }
 
+        //send the order id as a request parameter to used on the cart page
         order = orderDAO.findOpenOrder(user.getId());
         Integer orderId = order.getId();
+        response.addObject("orderId", orderId);
 
-        List<Map<String,Object>> orderProducts = orderProductDAO.findById(orderId);
 
-        log.debug(orderProducts.size() + "");
-        log.debug(orderProducts.get(0).values() + "");
-        log.debug(orderProducts.get(1).values() + "");
+        List<Map<String,Object>> orderProducts = orderProductDAO.findByCartByOrderId(orderId);
         response.addObject("orderProducts",orderProducts);
 
         log.debug("");
@@ -176,4 +175,25 @@ public class OrderController {
 
         return response;
     }
+
+    //method responsible for displaying the cart page: with user info: and order details
+    @GetMapping("/deleteFromCart/{orderProductId}")
+    public ModelAndView deleteFromCart(@PathVariable Integer orderProductId) {
+
+        log.debug("In the DELETE FROM CART controller method:");
+        ModelAndView response = new ModelAndView("order/cart");
+
+        OrderProduct orderProduct = orderProductDAO.findById(orderProductId);
+        orderProductDAO.delete(orderProduct);
+
+        List<Map<String,Object>> orderProducts = orderProductDAO.findByCartByOrderId(orderProductId);
+        response.addObject("orderProducts",orderProducts);
+
+        log.debug("");
+
+        //redirect response to new view (page)
+        response.setViewName("redirect:/order/cart");
+        return response;
+    }
+
 }

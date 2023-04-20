@@ -51,5 +51,9 @@ public class Order {
     @Column(name="address_line2")
     private String addressLine2;
 
+    @Column(name="shipped_date")
+    @Temporal(TemporalType.DATE)
+    private Date paymentDate;
+
 
 }
