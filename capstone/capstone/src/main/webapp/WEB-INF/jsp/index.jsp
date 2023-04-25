@@ -1,5 +1,21 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <jsp:include page="include/header.jsp"/>
 <link rel="stylesheet" href="/pub/css/index.css"/>
+
+<c:if test="${param['orderShipped'] != null}">
+    <section class="bg-light-grey text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-7 col-xl-5">
+                    <div class="alert alert-success" role="alert">
+                        Your Order Has Been Shipped!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</c:if>
 
 <!-- Hero Image -->
 <section>

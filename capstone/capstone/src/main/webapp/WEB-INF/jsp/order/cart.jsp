@@ -2,10 +2,16 @@
 
 <jsp:include page="../include/header.jsp" />
 
+
 <section class="py-5">
     <div class="container text-center">
 
-        <h4 class="pb-4">Cart List: ${orderProducts.size()} Items</h4>
+        <c:if test="${orderProducts.size() gt 0}">
+            <h4 class="pb-4">Cart List: ${orderProducts.size()} Items</h4>
+        </c:if>
+        <c:if test="${orderProducts.size() eq 0 || orderProducts == null}">
+            <h4 class="pb-4">Your Cart is Empty</h4>
+        </c:if>
 
         <table class="table table-striped">
             <thead>
@@ -18,7 +24,7 @@
             </thead>
             <tbody>
             <c:forEach items="${orderProducts}" var="product">
-                  <tr>
+              <tr>
                   <td>${product.name}</td>
                   <td><image class="w-25" src="${product.image_url}"></image></td>
                   <td>${product.price}</td>
@@ -28,9 +34,145 @@
                   </td>
               </tr>
             </c:forEach>
+            <tr>
+                <td>${orderProducts.size()} Items</td>
+                <td>Order Total: ${orderTotal}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
             </tbody>
         </table>
     </div>
 </section>
+
+<c:if test="${orderProducts.size() gt 0}">
+<form id="formId" action="/order/placeOrder/${orderId}/${orderTotal}">
+<section class="py-1">
+    <div class="container f-container">
+        <div class="row justify-content-center text-center">
+            <h2>Shipping Address</h2>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="mb-3 col-6 col-sm-12 col-xl-6">
+                <label for="fullName" class="form-label">Full Name (First and Last)</label>
+                <input type="text" aria-label="fullName" id="fullName" class="form-control" name="fullName" value="${form.fullName}">
+                <c:if test="${bindingResult.hasFieldErrors('fullName')}">
+                    <c:forEach items="${bindingResult.getFieldErrors('fullName')}" var="error">
+                        <div style="color:red;">${error.getDefaultMessage()}</div>
+                    </c:forEach>
+                </c:if>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="mb-3 col-6 col-sm-12 col-xl-6">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" aria-label="Country" id="country" class="form-control" name="country" value="${form.country}">
+                <c:if test="${bindingResult.hasFieldErrors('country')}">
+                    <c:forEach items="${bindingResult.getFieldErrors('country')}" var="error">
+                        <div style="color:red;">${error.getDefaultMessage()}</div>
+                    </c:forEach>
+                </c:if>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="mb-3 col-6 col-sm-12 col-xl-6">
+                <label for="addressLine1" class="form-label">Address</label>
+                <input type="text" placeholder="Street address or P.O Box" aria-label="addressLine1" id="addressLine1" class="form-control" name="addressLine1" value="${form.addressLine1}">
+                <c:if test="${bindingResult.hasFieldErrors('addressLine1')}">
+                    <c:forEach items="${bindingResult.getFieldErrors('addressLine1')}" var="error">
+                        <div style="color:red;">${error.getDefaultMessage()}</div>
+                    </c:forEach>
+                </c:if>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="mb-3 col-6 col-sm-12 col-xl-6">
+                <input type="text" placeholder="Apt, suite, unit, building, floor, etc" aria-label="addressLine2" id="addressLine2" class="form-control" name="addressLine2" value="${form.addressLine2}">
+                <c:if test="${bindingResult.hasFieldErrors('addressLine2')}">
+                    <c:forEach items="${bindingResult.getFieldErrors('addressLine2')}" var="error">
+                        <div style="color:red;">${error.getDefaultMessage()}</div>
+                    </c:forEach>
+                </c:if>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <div class="mb-3 col-md-3 col-sm-12 col-xl-3">
+                <label for="city" class="form-label">City</label>
+                <input type="text" aria-label="city" id="city" class="form-control" name="city" value="${form.city}">
+                <c:if test="${bindingResult.hasFieldErrors('city')}">
+                    <c:forEach items="${bindingResult.getFieldErrors('city')}" var="error">
+                        <div style="color:red;">${error.getDefaultMessage()}</div>
+                    </c:forEach>
+                </c:if>
+            </div>
+
+            <div class="mb-3 col-md-3 col-sm-12 col-xl-3">
+                <label for="state" class="form-label">State</label>
+                <input type="text" aria-label="state" id="state" class="form-control" name="state" value="${form.state}">
+                <c:if test="${bindingResult.hasFieldErrors('state')}">
+                    <c:forEach items="${bindingResult.getFieldErrors('state')}" var="error">
+                        <div style="color:red;">${error.getDefaultMessage()}</div>
+                    </c:forEach>
+                </c:if>
+            </div>
+
+            <div class="mb-3 col-md-3 col-sm-12 col-xl-3">
+                <label for="zipcode" class="form-label">ZIP Code</label>
+                <input type="text" aria-label="zipcode" id="zipcode" class="form-control" name="zipcode" value="${form.zipcode}">
+                <c:if test="${bindingResult.hasFieldErrors('zipcode')}">
+                    <c:forEach items="${bindingResult.getFieldErrors('zipcode')}" var="error">
+                        <div style="color:red;">${error.getDefaultMessage()}</div>
+                    </c:forEach>
+                </c:if>
+            </div
+        </div>
+    </div>
+</section>
+
+<section class="py-1">
+    <div class="container f-container">
+        <div class="row justify-content-center text-center">
+            <h2>Card Information</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="mb-3 col-6 col-sm-12 col-xl-6">
+                <label for="cardNumber" class="form-label">Card Number</label>
+                <input type="text" aria-label="cardNumber" id="cardNumber" class="form-control" name="cardNumber" value="${form.cardNumber}">
+                <c:if test="${bindingResult.hasFieldErrors('cardNumber')}">
+                    <c:forEach items="${bindingResult.getFieldErrors('cardNumber')}" var="error">
+                        <div style="color:red;">${error.getDefaultMessage()}</div>
+                    </c:forEach>
+                </c:if>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="mb-3 col-6 col-sm-12 col-xl-6">
+                <label for="cardName" class="form-label">Name On Card</label>
+                <input type="text" aria-label="cardName" id="cardName" class="form-control" name="cardName" value="${form.cardName}">
+                <c:if test="${bindingResult.hasFieldErrors('cardName')}">
+                    <c:forEach items="${bindingResult.getFieldErrors('cardName')}" var="error">
+                        <div style="color:red;">${error.getDefaultMessage()}</div>
+                    </c:forEach>
+                </c:if>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-3 text-center">
+        <div class="mb-3 col-md-3 col-sm-12 col-xl-3">
+            <button class="btn btn-primary">Place Your Order</button>
+        </div>
+    </div>
+</section>
+</form>
+</c:if>
+
+
 
 <jsp:include page="../include/footer.jsp" />

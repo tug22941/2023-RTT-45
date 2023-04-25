@@ -5,11 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0843fe6d-e732-44ae-98ae-f26011f74bd9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/AccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/formbeans/OrderFormBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/account.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/OrderDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/OrderProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/OrderProductDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/entity/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/include/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/order/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/order/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/product/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/product/detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/user/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/user/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/pub/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/pub/css/global.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +84,8 @@
       <workItem from="1681425923467" duration="691000" />
       <workItem from="1681480611281" duration="5435000" />
       <workItem from="1681666028162" duration="15354000" />
-      <workItem from="1681822785854" duration="6983000" />
+      <workItem from="1681822785854" duration="8201000" />
+      <workItem from="1682341367119" duration="621000" />
     </task>
     <servers />
   </component>

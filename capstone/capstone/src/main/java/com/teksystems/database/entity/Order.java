@@ -26,15 +26,21 @@ public class Order {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @Column(name="order_date")
+    @Column(name="shipping_date")
     @Temporal(TemporalType.DATE)
-    private Date orderDate;
+    private Date shippingDate;
 
     @Column(name="order_status")
     private String orderStatus;
 
+    @Column(name="total", columnDefinition="decimal", precision=18, scale=3)
+    private Double total;
+
     @Column(name="card_number")
     private String cardNumber;
+
+    @Column(name="country")
+    private String country;
 
     @Column(name="city")
     private String city;
@@ -51,9 +57,7 @@ public class Order {
     @Column(name="address_line2")
     private String addressLine2;
 
-    @Column(name="shipped_date")
-    @Temporal(TemporalType.DATE)
-    private Date paymentDate;
-
+    @Column(name="receiver")
+    private String receiver;
 
 }

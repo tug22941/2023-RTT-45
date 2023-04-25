@@ -63,7 +63,7 @@
                 <a class="nav-link" href="/login/logout">Sign Out</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href=""><sec:authentication property="principal.username" /></a>
+                <a class="nav-link" href="/account/accountInformation"><sec:authentication property="principal.username" /></a>
               </li>
             </sec:authorize>
 
