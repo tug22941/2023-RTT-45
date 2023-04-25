@@ -20,7 +20,8 @@ public interface OrderProductDAO extends JpaRepository<OrderProduct, Long> {
     OrderProduct findOrderProductById(Integer orderId, Integer productId);
 
     @Query(value="select p.id as \"product_id\", p.name, p.image_url, p.price, \n" +
-            "op.id as \"order_products_id\", op.quantity\n" +
+            "op.id as \"order_products_id\", op.quantity,\n" +
+            "o.order_status\n" +
             "from orders o, order_products op, products p\n" +
             "where\n" +
             "\to.id = :id and\n" +

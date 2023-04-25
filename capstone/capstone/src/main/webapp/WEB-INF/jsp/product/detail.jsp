@@ -3,6 +3,12 @@
 
 <jsp:include page="../include/header.jsp"/>
 
+<script>
+    function toEdits() {
+        location.href = "/product/edit/${product.id}";
+    }
+</script>
+
 <style>
     a {
         color: black;
@@ -16,11 +22,19 @@
     </div>
 </section>
 
-<script>
-    function toEdits() {
-        location.href = "/product/edit/${product.id}";
-    }
-</script>
+<c:if test="${cartUpdated}">
+    <section class="bg-light-grey text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-7 col-xl-5">
+                    <div class="alert alert-success" role="alert">
+                        Your Order Has Been Updated
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</c:if>
 
 <section class="py-5 bg-purple">
     <div class="container text-center d-flex">
@@ -30,7 +44,8 @@
             <tr>
                 <td>Edit Product</td>
                 <td>
-                 </td>
+                    <button type="button" class="btn btn-sm btn-danger" onclick="toEdits()">Edit Product Details</button>
+                </td>
             </tr>
             </sec:authorize>
             <tr>

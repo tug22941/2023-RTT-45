@@ -8,6 +8,7 @@ import com.teksystems.database.entity.Order;
 import com.teksystems.database.entity.OrderProduct;
 import com.teksystems.database.entity.Product;
 import com.teksystems.database.entity.User;
+import com.teksystems.formbeans.OrderFormBean;
 import com.teksystems.formbeans.OrderProductFormBean;
 import com.teksystems.security.AuthenticatedUserService;
 import jakarta.validation.Valid;
@@ -23,6 +24,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -61,6 +65,7 @@ public class OrderController {
 
         // if user does not have an open order: return the response object
         Order order = new Order();
+
         if(orderDAO.findOpenOrder(user.getId()) == null){
             log.debug("");
             return response;
@@ -71,9 +76,27 @@ public class OrderController {
         Integer orderId = order.getId();
         response.addObject("orderId", orderId);
 
-
+        //add list of ordered products map to the response object
         List<Map<String,Object>> orderProducts = orderProductDAO.findByCartByOrderId(orderId);
         response.addObject("orderProducts",orderProducts);
+
+        //loop through the ordered products list : and total the price of each product
+        Double doubleTotal = 0.00;
+        Integer quantity = 0;
+        for( Map product: orderProducts){
+
+            BigDecimal bd = (BigDecimal)product.get("price");
+            doubleTotal += bd.doubleValue();
+            quantity = (Integer) product.get("quantity");
+            doubleTotal =  doubleTotal * quantity;
+        }
+
+        BigDecimal orderTotal = new BigDecimal(doubleTotal.toString());
+        MathContext m = new MathContext(4);
+        orderTotal = orderTotal.round(m);
+        response.addObject("orderTotal", orderTotal );
+
+        log.debug(orderProducts + "");
 
         log.debug("");
         return response;
@@ -97,6 +120,7 @@ public class OrderController {
         //load product object with matching 'id': add product object to response object
         Product product = productDAO.findById(id);
         response.addObject("product",product);
+
 
         //check for error in the detail form - quantity - 'binding result'
         //if error found display debug notification, return to form without database upload
@@ -130,16 +154,7 @@ public class OrderController {
         //if user does not have a preloaded or open order: create a new order and return it to the page
         else {
             order.setUser(user);
-
-            Date now = new Date();
-            order.setOrderDate(now);
-
             order.setOrderStatus("Open");
-            order.setCardNumber("1110444055507770");
-            order.setCity("Philadelphia");
-            order.setState("PA");
-            order.setZipcode("19121");
-            order.setAddressLine1("1001 Broad St");
             orderDAO.save(order);
             response.addObject("orderId", order.getId());
 
@@ -154,7 +169,13 @@ public class OrderController {
         if(orderProductDAO.findOrderProductById(order.getId(), id) != null){
             orderProduct = orderProductDAO.findOrderProductById(order.getId(), id);
             log.debug("Order Product found - ID #: " + orderProduct.getId());
-            orderProduct.setQuantity(form.getQuantity());
+
+            if(orderProduct.getQuantity() == quantity){
+                log.debug("Product Quantity is already set to " + quantity);
+                return response;
+            }else{
+                orderProduct.setQuantity(form.getQuantity());
+            }
         }
         //if no matching record found: create a new record with product-quantity field-value set to form quantity value
         else{
@@ -166,6 +187,9 @@ public class OrderController {
 
         //save created - (or)- modified order-product record into database
         orderProductDAO.save(orderProduct);
+
+        response.addObject("cartUpdated", true);
+
 
         log.debug("ORDER PRODUCT UPDATED!");
         log.debug("Order #: " + orderProduct.getId() +
@@ -186,14 +210,93 @@ public class OrderController {
         OrderProduct orderProduct = orderProductDAO.findById(orderProductId);
         orderProductDAO.delete(orderProduct);
 
-        List<Map<String,Object>> orderProducts = orderProductDAO.findByCartByOrderId(orderProductId);
-        response.addObject("orderProducts",orderProducts);
-
         log.debug("");
 
         //redirect response to new view (page)
         response.setViewName("redirect:/order/cart");
         return response;
+    }
+
+    @GetMapping("/placeOrder/{orderId}/{orderTotal}")
+    public ModelAndView placeOrder(@PathVariable Integer orderId,
+                                   @PathVariable Double orderTotal,
+                                   @Valid OrderFormBean form, BindingResult bindingResult) {
+
+        log.debug("In the PLACE ORDER controller method:");
+        ModelAndView response = new ModelAndView("order/cart");
+
+        //load user from authenticated user service
+        User user = authenticatedUserService.loadCurrentUser();
+
+        //check for errors in the user form 'binding results'
+        //if error found display debug notification, return to form without database upload
+        if ( bindingResult.hasErrors() ) {
+            for ( FieldError error : bindingResult.getFieldErrors()) {
+                log.debug("Validation Error on field : " + error.getField() + " with message : " + error.getDefaultMessage());
+            }
+            response.addObject("form",form);
+            response.addObject("bindingResult",bindingResult);
+
+            //repeat logic from view cart
+
+            // if user does not have an open order: return the response object
+            Order order = new Order();
+
+            if(orderDAO.findOpenOrder(user.getId()) == null){
+                log.debug("");
+                return response;
+            }
+
+            //send the order id as a request parameter to used on the cart page
+            order = orderDAO.findOpenOrder(user.getId());
+            response.addObject("orderId", orderId);
+
+            //add list of ordered products map to the response object
+            List<Map<String,Object>> orderProducts = orderProductDAO.findByCartByOrderId(orderId);
+            response.addObject("orderProducts",orderProducts);
+
+            //loop through the ordered products list : and total the price of each product
+            Double doubleTotal = 0.00;
+            Integer quantity = 0;
+            for( Map product: orderProducts){
+
+                BigDecimal bd = (BigDecimal)product.get("price");
+                doubleTotal += bd.doubleValue();
+                quantity = (Integer) product.get("quantity");
+                doubleTotal =  doubleTotal * quantity;
+            }
+
+            response.addObject("orderTotal", orderTotal );
+
+            return response;
+        }else {
+
+            Order order = orderDAO.findById(orderId);
+
+            order.setUser(user);
+            order.setReceiver(form.getFullName());
+            order.setOrderStatus("Shipped");
+            order.setCardNumber(form.getCardNumber());
+            order.setCountry(form.getCountry());
+            order.setCity(form.getCity());
+            order.setState(form.getState());
+            order.setZipcode(form.getZipcode());
+            order.setAddressLine1(form.getAddressLine1());
+            if(form.getAddressLine2() != null){
+                order.setAddressLine2(form.getAddressLine2());
+            }
+            order.setTotal(orderTotal);
+            order.setShippingDate(new Date());
+            orderDAO.save(order);
+
+            response.addObject("orderShipped", order.getOrderStatus());
+
+            log.debug("");
+
+            //redirect response to new view (page)
+            response.setViewName("redirect:/index");
+            return response;
+        }
     }
 
 }
