@@ -4,33 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0843fe6d-e732-44ae-98ae-f26011f74bd9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/SlashController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/SlashController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/OrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/OrderProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/OrderProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/UserRoleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/database/dao/UserRoleDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/formbeans/OrderFormBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/formbeans/OrderFormBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/formbeans/UserFormBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/formbeans/UserFormBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/security/AuthenticatedUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/security/AuthenticatedUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/security/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/security/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/validation/EmailUniqueImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/java/com/teksystems/validation/EmailUniqueImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/account.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/login/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/order/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/order/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/product/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/product/create.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/search.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/user/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/main/webapp/WEB-INF/jsp/user/create.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/test/java/com/teksystems/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/test/java/com/teksystems/database/dao/ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../capstone/capstone/src/test/java/com/teksystems/UserDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../capstone/capstone/src/test/java/com/teksystems/database/dao/UserDAOTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="0843fe6d-e732-44ae-98ae-f26011f74bd9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,6 +73,7 @@
       <workItem from="1682341367119" duration="621000" />
       <workItem from="1682546287788" duration="663000" />
       <workItem from="1682600618396" duration="615000" />
+      <workItem from="1682627154076" duration="94000" />
     </task>
     <servers />
   </component>
