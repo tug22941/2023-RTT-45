@@ -1,7 +1,7 @@
 package com.teksystems.security;
 
-import com.teksystems.database.dao.UserDAO;
 import com.teksystems.database.dao.UserRoleDAO;
+import com.teksystems.database.dao.UserDAO;
 import com.teksystems.database.entity.User;
 import com.teksystems.database.entity.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private UserRoleDAO userRolesDAO;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userDAO.findByEmail(username);
+        User user = userDAO.findByEmailIgnoreCase(username);
 
         //this checks if the user is not found in database
         // UsernameNotFoundException is part of Spring Security and tell spring that the user was not found (AND stops code execution)

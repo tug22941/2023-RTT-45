@@ -1,6 +1,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:include page="include/header.jsp"/>
+<link rel="stylesheet" href="/pub/css/search.css" />
+
 
 <section class="py-3">
     <div class="container text-center">
@@ -14,38 +16,30 @@
 
         <h4 class="pb-4">${productsList.size()} Search Results </h4>
 
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col">Product ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Price</th>
-                <th scope="col">Product Type</th>
-                <th scope="col">Image URL</th>
-            </tr>
-            </thead>
-            <tbody>
+        <div class="row justify-content-center p-3">
             <c:forEach items="${productsList}" var="product">
-
-                <script>
-                    function toDetails() {
-                        location.href = "/product/detail/${product.id}";
-                    }
-                </script>
-
-                <tr>
-                    <td>${product.id}</td>
-                    <td>${product.name}</td>
-                    <td>${product.description}</td>
-                    <td>${product.price}</td>
-                    <td>${product.productType}</td>
-                    <td>${product.imageUrl}</td>
-                    <td><a href="/product/detail/${product.id}">Product Details</a></td>
-                </tr>
+            <div class="col-md-3 col-sm-12">
+                <a href="/product/detail/${product.id}">
+                <div class="card">
+                    <img src="${product.imageUrl}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${product.name}</h5>
+                        <p class="card-text">${product.description}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <span class="font-weight-bold">Price:</span> $${product.price}
+                        </li>
+                        <li class="list-group-item">
+                            <span class="font-weight-bold">Category:</span> ${product.productType}
+                        </li>
+                    </ul>
+                </div>
+                </a>
+            </div>
             </c:forEach>
-            </tbody>
-        </table>
+        </div>
+
     </div>
 </section>
 

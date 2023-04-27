@@ -19,12 +19,15 @@
         </c:if>
     </div>
 </section>
-
-<c:if test="${success}" >
-    <div class="alert alert-success text-center" role="alert">
-        Sign Up Completed!
+<div class="row justify-content-center">
+    <div class="mb-3 col-6 col-sm-12 col-xl-6">
+    <c:if test="${success}" >
+        <div class="alert alert-success text-center" role="alert">
+            Product Created!
+        </div>
+    </c:if>
     </div>
-</c:if>
+</div>
 
 <section class="py-5">
     <div class="container f-container">
@@ -115,7 +118,8 @@
 
         <table class="table table-striped">
             <thead>
-            <tr>-
+            <tr>
+                <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Description</th>
                 <th scope="col">Image URL</th>
@@ -126,12 +130,13 @@
             <tbody>
             <c:forEach items="${productsList}" var="product">
                 <tr>
+                    <td>${product.id}</td>
                     <td>${product.name}</td>
                     <td>${product.description}</td>
                     <td>${product.imageUrl}</td>
                     <td>${product.productType}</td>
                     <td>${product.price}</td>
-                    <td><a href="/product/edit/${product.id}">Edit</a></td>
+                    <td><a href="/product/edit/${product.id}" class="btn btn-sm btn-primary"  role="button" >Edit</a></td>
                 </tr>
             </c:forEach>
             </tbody>

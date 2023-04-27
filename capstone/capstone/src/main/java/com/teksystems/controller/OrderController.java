@@ -4,8 +4,8 @@ import com.teksystems.database.dao.OrderDAO;
 import com.teksystems.database.dao.OrderProductDAO;
 import com.teksystems.database.dao.ProductDAO;
 import com.teksystems.database.dao.UserDAO;
-import com.teksystems.database.entity.Order;
 import com.teksystems.database.entity.OrderProduct;
+import com.teksystems.database.entity.Order;
 import com.teksystems.database.entity.Product;
 import com.teksystems.database.entity.User;
 import com.teksystems.formbeans.OrderFormBean;
@@ -13,7 +13,6 @@ import com.teksystems.formbeans.OrderProductFormBean;
 import com.teksystems.security.AuthenticatedUserService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
-import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -26,7 +25,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
-import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -87,9 +85,10 @@ public class OrderController {
 
             BigDecimal bd = (BigDecimal)product.get("price");
             doubleTotal += bd.doubleValue();
-            quantity = (Integer) product.get("quantity");
+            quantity += (Integer) product.get("quantity");
             doubleTotal =  doubleTotal * quantity;
         }
+        response.addObject("quantity", quantity);
 
         BigDecimal orderTotal = new BigDecimal(doubleTotal.toString());
         MathContext m = new MathContext(4);
@@ -265,6 +264,8 @@ public class OrderController {
                 quantity = (Integer) product.get("quantity");
                 doubleTotal =  doubleTotal * quantity;
             }
+            response.addObject("quantity", quantity);
+
 
             response.addObject("orderTotal", orderTotal );
 

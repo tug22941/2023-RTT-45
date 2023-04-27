@@ -1,9 +1,9 @@
 package com.teksystems.controller;
 
 import com.teksystems.database.dao.OrderDAO;
-import com.teksystems.database.dao.OrderProductDAO;
 import com.teksystems.database.dao.ProductDAO;
 import com.teksystems.database.dao.UserDAO;
+import com.teksystems.database.dao.OrderProductDAO;
 import com.teksystems.database.entity.Order;
 import com.teksystems.database.entity.User;
 import com.teksystems.security.AuthenticatedUserService;
@@ -14,10 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @Slf4j

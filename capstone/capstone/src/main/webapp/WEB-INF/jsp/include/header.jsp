@@ -76,7 +76,7 @@
             <sec:authorize access="isAuthenticated()">
               <li class="nav-item d-flex justify-content-end cart-link">
                 <a class="nav-link text-end cart-a" href="/order/cart">
-                  <img src="../../../pub/images/cart.png" class="cart-img">
+                  <img src="/pub/images/cart.png" class="cart-img">
                   <span>Cart</span>
                 </a>
               </li>

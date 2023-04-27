@@ -37,7 +37,7 @@ public class AuthenticatedUserService {
 
     public User loadCurrentUser() {
         ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
-        User user = userDAO.findByEmail(getCurrentUsername());
+        User user = userDAO.findByEmailIgnoreCase(getCurrentUsername());
         return user;
     }
 

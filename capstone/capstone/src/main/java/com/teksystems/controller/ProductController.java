@@ -3,12 +3,10 @@ package com.teksystems.controller;
 import com.teksystems.database.dao.OrderDAO;
 import com.teksystems.database.dao.OrderProductDAO;
 import com.teksystems.database.dao.ProductDAO;
-import com.teksystems.database.dao.UserDAO;
 import com.teksystems.database.entity.Order;
 import com.teksystems.database.entity.OrderProduct;
 import com.teksystems.database.entity.Product;
 import com.teksystems.database.entity.User;
-import com.teksystems.formbeans.OrderProductFormBean;
 import com.teksystems.formbeans.ProductFormBean;
 import com.teksystems.security.AuthenticatedUserService;
 import jakarta.validation.Valid;
@@ -23,7 +21,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Date;
 import java.util.List;
 
 //controller class responsible for handling product actions
