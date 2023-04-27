@@ -64,7 +64,7 @@ public class LoginController {
         //set the response model and view object
         log.debug("in the SIGNUP SUBMIT controller method:");
         log.debug(form.toString());
-        ModelAndView response = new ModelAndView("signup");
+        ModelAndView response = new ModelAndView("login/signup");
 
         //log the user form: add the user form to the response object
         log.debug(form.toString());
@@ -114,7 +114,7 @@ public class LoginController {
         authenticatedUserService.changeLoggedInUsername(session, form.getEmail(), form.getPassword());
 
         //redirect response to new view (page)
-        //response.setViewName("redirect:/index");
+        response.setViewName("redirect:/index");
 
         log.debug("");
         return response;

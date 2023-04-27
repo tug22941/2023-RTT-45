@@ -17,10 +17,12 @@ public class UserFormBean {
 
     @NotEmpty(message = "First name is required")
     @Length(max=45, message="First name can not be longer than 45 characters")
+    @Pattern(regexp="^[A-Z][-'a-zA-Z]+$", message="Invalid First Name Format")
     private String firstName;
 
     @NotEmpty(message = "Last name is required")
     @Length(max=45, message="Last name can not be longer than 45 characters")
+    @Pattern(regexp="^[A-Z][-'a-zA-Z]+$", message="Invalid Last Name Format")
     private String lastName;
 
     @NotEmpty (message = "Email address is required")

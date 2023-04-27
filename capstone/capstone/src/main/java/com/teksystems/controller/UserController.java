@@ -2,12 +2,10 @@ package com.teksystems.controller;
 
 import com.teksystems.database.dao.UserDAO;
 import com.teksystems.database.dao.UserRoleDAO;
-import com.teksystems.database.entity.Product;
 import com.teksystems.database.entity.User;
 import com.teksystems.database.entity.UserRole;
 import com.teksystems.formbeans.UserFormBean;
 import com.teksystems.security.AuthenticatedUserService;
-import jakarta.persistence.EntityManager;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -109,7 +107,7 @@ public class UserController {
         //set user properties to form values
         user.setFirstName(form.getFirstName());
         user.setLastName(form.getLastName());
-        user.setEmail(form.getEmail());
+        user.setEmail(form.getEmail().toLowerCase());
 
         //b-crypt password form value using spring security: set user property to encrypted value
         String encryptedPassword = passwordEncoder.encode(form.getPassword());
@@ -117,7 +115,6 @@ public class UserController {
 
         //save created product into database: add form object to response object
         userDAO.save(user);
-        response.addObject("form",form);
 
         //load list of all users : and add user object to the response object
         List<User> users = userDAO.getAllUsers();

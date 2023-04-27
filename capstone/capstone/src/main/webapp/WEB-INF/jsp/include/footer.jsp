@@ -1,4 +1,4 @@
- <section>
+ <section class="footer">
       <div
         class="row justify-content-start mt-2 p-2 align-items-end text-center"
         style="background-color: #f1bb7f; border-top: 2px solid #7a5b36"
@@ -24,22 +24,22 @@
           class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center"
         >
           <div class="token">
-            <a href="https://www.tiktok.com/en/"
+            <a href="https://www.tiktok.com/en/" target="_blank"
               ><img src="../../../pub/images/token_tiktok.png"
             /></a>
           </div>
           <div class="token">
-            <a href="https://www.instagram.com/"
+            <a href="https://www.instagram.com/" target="_blank"
               ><img src="../../../pub/images/token_instagram.png"
             /></a>
           </div>
           <div class="token">
-            <a href="https://www.facebook.com/"
+            <a href="https://www.facebook.com/" target="_blank"
               ><img src="../../../pub/images/token_facebook.png"
             /></a>
           </div>
           <div class="token">
-            <a href="https://www.youtube.com/"
+            <a href="https://www.youtube.com/" target="_blank"
               ><img src="../../../pub/images/token_youtube.png"
             /></a>
           </div>

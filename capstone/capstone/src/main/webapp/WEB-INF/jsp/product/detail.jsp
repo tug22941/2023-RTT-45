@@ -2,6 +2,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <jsp:include page="../include/header.jsp"/>
+<link rel="stylesheet" href="/pub/css/details.css" />
+
 
 <script>
     function toEdits() {
@@ -36,68 +38,59 @@
     </section>
 </c:if>
 
-<section class="py-5 bg-purple">
-    <div class="container text-center d-flex">
-        <table class="table table-striped">
-            <tbody>
-            <sec:authorize access="hasAnyAuthority('ADMIN')">
-            <tr>
-                <td>Edit Product</td>
-                <td>
-                    <button type="button" class="btn btn-sm btn-danger" onclick="toEdits()">Edit Product Details</button>
-                </td>
-            </tr>
-            </sec:authorize>
-            <tr>
-                <td>ID #</td>
-                <td>${product.id}</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>${product.name}</td>
-            </tr>
-            <tr>
-                <td>Description</td>
-                <td>${product.description}</td>
-            </tr>
-            <tr>
-                <td>price</td>
-                <td>${product.price}</td>
-            </tr>
-            <tr>
-                <td>type</td>
-                <td>${product.productType}</td>
-            </tr>
-            <tr>
-                <td>Image</td>
-                <td><img src="${product.imageUrl}" class="w-50"/></td>
-            </tr>
-            <form action="/order/addToCart/${product.id}">
-            <tr>
-                <td>Quantity</td>
-                <td>
-                    <select class="form-select text-center" aria-label="Select Quantity" name="quantity" value="${quantity}">
-                        <option value="0" selected >No Quantity Selected</option>
-                        <option value="1" <c:if test="${quantity eq 1}">selected</c:if>>1</option>
-                        <option value="2" <c:if test="${quantity eq 2}">selected</c:if>>2</option>
-                        <option value="3" <c:if test="${quantity eq 3}">selected</c:if>>3</option>
-                        <option value="4" <c:if test="${quantity eq 4}">selected</c:if>>4</option>
-                    </select>
-                    <c:if test="${bindingResult.hasFieldErrors('quantity')}">
-                        <c:forEach items="${bindingResult.getFieldErrors('quantity')}" var="error">
-                            <div style="color:red;">${error.getDefaultMessage()}</div>
-                        </c:forEach>
-                    </c:if>
-                </td>
-                <td>
-                    <input type="hidden" name="quantity" value="${quantity}"/>
-                    <input type="hidden" name="orderId" value="${orderId}"/>
-                    <button class="btn btn-sm btn-warning" name="id">Add to Cart</button>
-                </td>
-            </tr>
-            </form>
-            </tbody>
-        </table>
+<section>
+    <div class="row justify-content-center p-3">
+        <div class="col-md-10 col-sm-12 p-2 box-wrap">
+
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <div class="d-flex flex-column">
+                        <div><img src="${product.imageUrl}"/></div>
+                        <div class="text-center bg">
+                            <h4>${product.productType}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-12 info-box">
+                    <div class="text-center">
+                        <button type="button" class="btn btn-sm btn-danger" onclick="toEdits()">Edit Product Details</button>
+                    </div>
+                    <div class="text-center">
+                        <h3>${product.name}</h3>
+                    </div>
+                    <div class="text-center">
+                        <h4>$${product.price}</h4>
+                    </div>
+                    <div class="text-center">
+                        <p>${product.description}</p>
+                    </div>
+
+                    <form action="/order/addToCart/${product.id}">
+                    <div class="justify-content-center d-flex p-3">
+                        <select class="form-select text-center w-33" aria-label="Select Quantity" name="quantity" value="${quantity}">
+                            <option value="0" selected >No Quantity Selected</option>
+                            <option value="1" <c:if test="${quantity eq 1}">selected</c:if>>1</option>
+                            <option value="2" <c:if test="${quantity eq 2}">selected</c:if>>2</option>
+                            <option value="3" <c:if test="${quantity eq 3}">selected</c:if>>3</option>
+                            <option value="4" <c:if test="${quantity eq 4}">selected</c:if>>4</option>
+                        </select>
+                    </div>
+                    <div class="text-center p-2">
+                        <c:if test="${bindingResult.hasFieldErrors('quantity')}">
+                            <c:forEach items="${bindingResult.getFieldErrors('quantity')}" var="error">
+                                <div style="color:red;">${error.getDefaultMessage()}</div>
+                            </c:forEach>
+                        </c:if>
+                    </div>
+                    <div class="text-center p-2">
+                        <button class="btn btn-sm btn-warning" name="id">Add to Cart</button>
+                    </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
     </div>
 </section>
 

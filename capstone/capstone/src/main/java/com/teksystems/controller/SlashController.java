@@ -1,9 +1,7 @@
 package com.teksystems.controller;
 
 import com.teksystems.database.dao.ProductDAO;
-import com.teksystems.database.dao.UserDAO;
 import com.teksystems.database.entity.Product;
-import com.teksystems.security.AuthenticatedUserService;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

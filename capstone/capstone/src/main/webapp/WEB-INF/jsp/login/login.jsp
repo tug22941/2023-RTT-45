@@ -35,7 +35,7 @@
             />
             <label for="inputPassword" class="sr-only">Password</label>
             <input
-                    type="text"
+                    type="password"
                     id="inputPassword"
                     class="form-control"
                     placeholder="Password"

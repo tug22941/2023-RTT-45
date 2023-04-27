@@ -19,15 +19,15 @@ public class OrderFormBean {
 
     @NotEmpty(message = "Country name is required")
     @Length(max=45, message="Country name can not be longer than 45 characters")
-    //@Pattern(regexp="[^()[\\]{}*&^%$#@!]+", message="Invalid Country Format")
+    @Pattern(regexp="^([a-zA-Z'-.]+ [a-zA-Z'-.]+)$", message="Invalid Country Format")
     private String country;
 
     @NotEmpty(message = "City is required")
-    @Pattern(regexp="^[A-Z][-'a-zA-Z]+$", message="Invalid City Format")
+    @Pattern(regexp="^[A-Z][-' a-zA-Z]+$", message="Invalid City Format")
     private String city;
 
     @NotEmpty(message = "State is required")
-    @Pattern(regexp="^[A-Z][-'a-zA-Z]+$", message="Invalid State Format")
+    @Pattern(regexp="^[A-Z][-' a-zA-Z]+$", message="Invalid State Format")
     private String state;
 
     @NotEmpty(message = "ZIP Code is required")

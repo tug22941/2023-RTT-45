@@ -76,7 +76,7 @@
             <div class="row justify-content-center align-items-center">
                 <div class="mb-3 col-md-6 col-sm-12 col-xl-6">
                     <label for="password" class="form-label">Password</label>
-                    <input type="text" aria-label="Password" id="password" class="form-control" name="password" value="${form.password}">
+                    <input type="password" aria-label="Password" id="password" class="form-control" name="password" value="${form.password}">
                     <div id="password_help" class="form-text"></div>
                     <c:if test="${bindingResult.hasFieldErrors('password')}">
                         <c:forEach items="${bindingResult.getFieldErrors('password')}" var="error">
@@ -87,7 +87,7 @@
 
                 <div class="mb-3 col-md-6 col-sm-12 col-xl-6">
                     <label for="confirmPassword" class="form-label">Confirm Password</label>
-                    <input type="text" aria-label="confirmPassword" id="confirmPassword" class="form-control" name="confirmPassword" value="${form.confirmPassword}">
+                    <input type="password" aria-label="confirmPassword" id="confirmPassword" class="form-control" name="confirmPassword" value="${form.confirmPassword}">
                     <div id="ConfirmPassword_help" class="form-text"></div>
                     <c:if test="${bindingResult.hasFieldErrors('confirmPassword')}">
                         <c:forEach items="${bindingResult.getFieldErrors('confirmPassword')}" var="error">
@@ -134,7 +134,7 @@
                     <td>${user.firstName}</td>
                     <td>${user.lastName}</td>
                     <td>${user.email}</td>
-                    <td><a href="/user/edit/${user.id}">Edit</a></td>
+                    <td><a href="/user/edit/${user.id}" class="btn btn-sm btn-primary"  role="button" >Edit</a></td>
                 </tr>
             </c:forEach>
             </tbody>

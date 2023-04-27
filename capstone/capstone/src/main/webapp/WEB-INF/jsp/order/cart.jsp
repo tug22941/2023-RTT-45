@@ -1,32 +1,80 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <jsp:include page="../include/header.jsp" />
+<link rel="stylesheet" href="/pub/css/cart.css" />
+
+
+
+<section>
+    <c:if test="${orderProducts.size() eq 0 || orderProducts == null}">
+        <h2 class="pb-4">Your Cart is Empty</h2>
+    </c:if>
+
+    <c:if test="${orderProducts.size() gt 0}">
+        <h2 class="pb-4 text-center">Cart List: ${product.quantity} Items</h2>
+    </c:if>
+
+    <c:forEach items="${orderProducts}" var="product">
+        <div class="row justify-content-center p-3">
+            <div class="col-md-6 col-sm-12 p-2 box-wrap">
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <div>
+                            <a href="/product/detail/${product.product_id}">
+                                <image class="w-50" src="${product.image_url}"></image>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-12 info-box">
+                        <div class="text-center">
+                            <h4>${product.name}</h4>
+                        </div>
+                        <div class="text-center">
+                            <h4>$${product.price}</h4>
+                        </div>
+                        <div class="text-center">
+                            <p>${product.description}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </c:forEach>
+</section>
 
 
 <section class="py-5">
     <div class="container text-center">
 
-        <c:if test="${orderProducts.size() gt 0}">
-            <h4 class="pb-4">Cart List: ${orderProducts.size()} Items</h4>
-        </c:if>
         <c:if test="${orderProducts.size() eq 0 || orderProducts == null}">
             <h4 class="pb-4">Your Cart is Empty</h4>
         </c:if>
 
-        <table class="table table-striped">
-            <thead>
-            <tr>-
-                <th scope="col">Name</th>
-                <th scope="col">Image URL</th>
-                <th scope="col">Price</th>
-                <th scope="col">Quantity</th>
-            </tr>
-            </thead>
-            <tbody>
+        <c:if test="${orderProducts.size() gt 0}">
+            <h4 class="pb-4">Cart List: ${orderProducts.size()} Items</h4>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>-
+                    <th scope="col">Name</th>
+                    <th scope="col">Image URL</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+                </thead>
+                <tbody>
+        </c:if>
+
             <c:forEach items="${orderProducts}" var="product">
               <tr>
                   <td>${product.name}</td>
-                  <td><image class="w-25" src="${product.image_url}"></image></td>
+                  <td>
+                      <a href="/product/detail/${product.product_id}">
+                          <image class="w-25" src="${product.image_url}"></image>
+                      </a>
+                  </td>
                   <td>${product.price}</td>
                   <td>${product.quantity}</td>
                   <td>
@@ -34,13 +82,16 @@
                   </td>
               </tr>
             </c:forEach>
+
+            <c:if test="${orderProducts.size() gt 0}">
             <tr>
-                <td>${orderProducts.size()} Items</td>
+                <td>Items: ${quantity} </td>
                 <td>Order Total: ${orderTotal}</td>
                 <td></td>
                 <td></td>
                 <td></td>
             </tr>
+            </c:if>
             </tbody>
         </table>
     </div>

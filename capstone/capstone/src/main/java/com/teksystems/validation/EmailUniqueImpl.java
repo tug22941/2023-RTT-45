@@ -48,7 +48,7 @@ public class EmailUniqueImpl implements ConstraintValidator<EmailUnique, String>
         // if a record returns it means they exist in the database
         // if null then the user does not exist
 
-        User user = userDAO.findByEmail(value);
+        User user = userDAO.findByEmailIgnoreCase(value);
 
         // if the result is true then the validation passes
         // so if the user returned from the query is null then we pass the validation

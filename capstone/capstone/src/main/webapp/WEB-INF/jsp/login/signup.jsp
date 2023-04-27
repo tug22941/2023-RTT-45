@@ -14,7 +14,7 @@
   <!-- Content -->
     <section class="py-2">
         <div class="container f-container">
-            <form id="formId" action="/login/signupSubmit" method="POST">
+            <form id="formId" method="POST" action="/login/signupSubmit">
 
                 <c:if test="${success}" >
                     <div class="alert alert-success text-center" role="alert">

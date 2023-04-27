@@ -1,0 +1,11 @@
+h2{
+    text-decoration: underline;
+}
+.box-wrap{
+    background: #c19bdc;
+}
+.info-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

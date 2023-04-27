@@ -17,7 +17,7 @@ public interface ProductDAO extends JpaRepository<Product, Long> {
     Product findById(Integer id);
 
     //get product matching search
-    @Query(value="select * from products where name like concat('%', :search, '%') or product_type like concat('%', :search, '%') ;", nativeQuery = true)
+    @Query(value="select * from products p where lower(p.name) like lower(concat('%', :search, '%')) or lower(p.product_type) like lower(concat('%', :search, '%')) ;", nativeQuery = true)
     List<Product> findProductsBySearch(String search);
 
 
