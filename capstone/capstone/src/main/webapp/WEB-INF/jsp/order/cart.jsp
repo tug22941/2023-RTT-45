@@ -7,11 +7,11 @@
 
 <section>
     <c:if test="${orderProducts.size() eq 0 || orderProducts == null}">
-        <h2 class="pb-4">Your Cart is Empty</h2>
+        <h2 class="pb-4 text-center">Your Cart is Empty</h2>
     </c:if>
 
     <c:if test="${orderProducts.size() gt 0}">
-        <h2 class="pb-4 text-center">Cart List: ${product.quantity} Items</h2>
+        <h2 class="p-4 text-center">Cart List: ${quantity} Items</h2>
     </c:if>
 
     <c:forEach items="${orderProducts}" var="product">
@@ -34,7 +34,10 @@
                             <h4>$${product.price}</h4>
                         </div>
                         <div class="text-center">
-                            <p>${product.description}</p>
+                            <p>Quantity: x${product.quantity}</p>
+                        </div>
+                        <div class="text-center">
+                            <a href="/order/deleteFromCart/${product.order_products_id}" class="btn btn-danger"  role="button" >Delete</a>
                         </div>
                     </div>
                 </div>
@@ -42,59 +45,14 @@
             </div>
         </div>
     </c:forEach>
-</section>
 
-
-<section class="py-5">
-    <div class="container text-center">
-
-        <c:if test="${orderProducts.size() eq 0 || orderProducts == null}">
-            <h4 class="pb-4">Your Cart is Empty</h4>
-        </c:if>
-
-        <c:if test="${orderProducts.size() gt 0}">
-            <h4 class="pb-4">Cart List: ${orderProducts.size()} Items</h4>
-
-            <table class="table table-striped">
-                <thead>
-                <tr>-
-                    <th scope="col">Name</th>
-                    <th scope="col">Image URL</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Quantity</th>
-                </tr>
-                </thead>
-                <tbody>
-        </c:if>
-
-            <c:forEach items="${orderProducts}" var="product">
-              <tr>
-                  <td>${product.name}</td>
-                  <td>
-                      <a href="/product/detail/${product.product_id}">
-                          <image class="w-25" src="${product.image_url}"></image>
-                      </a>
-                  </td>
-                  <td>${product.price}</td>
-                  <td>${product.quantity}</td>
-                  <td>
-                      <a href="/order/deleteFromCart/${product.order_products_id}" class="btn btn-danger"  role="button" >Delete</a>
-                  </td>
-              </tr>
-            </c:forEach>
-
-            <c:if test="${orderProducts.size() gt 0}">
-            <tr>
-                <td>Items: ${quantity} </td>
-                <td>Order Total: ${orderTotal}</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            </c:if>
-            </tbody>
-        </table>
+    <c:if test="${orderProducts.size() gt 0}">
+    <div class="row justify-content-center p-3">
+        <div class="col-md-6 col-sm-12 p-2 box-wrap2">
+           <h5> Order Total: ${orderTotal}</h5>
+        </div>
     </div>
+    </c:if>
 </section>
 
 <c:if test="${orderProducts.size() gt 0}">
@@ -186,7 +144,7 @@
     </div>
 </section>
 
-<section class="py-1">
+<section class="py-1 mb-5">
     <div class="container f-container">
         <div class="row justify-content-center text-center">
             <h2>Card Information</h2>
