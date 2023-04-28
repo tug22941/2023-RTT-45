@@ -58,11 +58,15 @@ public class AccountController {
             //get orderId of all closed orders
             ordersList = orderDAO.findPastOrders(user.getId());
 
+            //stream
+            ordersList.stream().forEach(ol -> {
+                log.debug(ol.toString());
+            });
+
             List<List<Map<String,Object>>> fullList = new ArrayList<>();
 
             //for every closed order
             for(Order order: ordersList){
-                log.debug(order.getId() + "");
                 //get the List of items in that order
                 List<Map<String,Object>> orderInfoList = orderDAO.findOrderInformation(order.getId());
 

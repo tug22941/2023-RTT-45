@@ -1,8 +1,10 @@
-h2{
-    text-decoration: underline;
-}
+
 .box-wrap{
-    background: #c19bdc;
+    background: #ef85be;
+}
+.box-wrap2{
+    background: #F1BB7F;
+    text-align: center;
 }
 .info-box{
     display: flex;

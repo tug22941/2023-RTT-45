@@ -87,9 +87,23 @@
                 </div>
 
                 <div class="row justify-content-center">
-                  <div class="col col-4 text-center">
+                  <div class="col col-5 text-center">
                     <button class="btn btn-success w-75" id="btnSubmit">Create Account</button>
                   </div>
+                    <div class="col col-5 text-center">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Premium Account
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Standard Account
+                            </label>
+                        </div>
+                    </div>
                 </div>
 
               </form>

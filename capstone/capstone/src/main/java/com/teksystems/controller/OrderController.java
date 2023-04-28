@@ -78,6 +78,7 @@ public class OrderController {
         List<Map<String,Object>> orderProducts = orderProductDAO.findByCartByOrderId(orderId);
         response.addObject("orderProducts",orderProducts);
 
+
         //loop through the ordered products list : and total the price of each product
         Double doubleTotal = 0.00;
         Integer quantity = 0;
